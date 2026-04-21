@@ -11,6 +11,12 @@ export type TrainingExerciseDef = {
   hint: string;
   iconName: "human-handsup" | "dumbbell" | "arm-flex";
   image: ImageSourcePropType;
+  /** Runtime-only: current consecutive-sessions streak (0 if never completed). */
+  streak?: number;
+  /** Runtime-only: how many more sessions until the next +1 rep bonus. */
+  sessionsUntilNext?: number;
+  /** Runtime-only: personalized starting target (before progression). */
+  baseReps?: number;
 };
 
 export const TRAINING_EXERCISES: TrainingExerciseDef[] = [

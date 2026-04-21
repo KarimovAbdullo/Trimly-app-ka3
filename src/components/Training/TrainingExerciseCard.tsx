@@ -83,6 +83,15 @@ export function TrainingExerciseCard({
               <Text style={styles.infoLine}>
                 {t("training.completedDays")}: {completedDays}
               </Text>
+              {typeof exercise.streak === "number" ? (
+                <Text style={styles.streakLine}>
+                  🔥 {t("training.streak")}: {exercise.streak}
+                  {typeof exercise.sessionsUntilNext === "number" &&
+                  exercise.streak > 0
+                    ? ` • ${exercise.sessionsUntilNext} ${t("training.untilNextBonus")}`
+                    : ""}
+                </Text>
+              ) : null}
 
               <View
                 style={styles.progressTrack}
@@ -199,6 +208,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "600",
     color: "rgba(226,232,240,0.9)",
+  },
+  streakLine: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: "#FDE68A",
   },
   progressTrack: {
     marginTop: 2,

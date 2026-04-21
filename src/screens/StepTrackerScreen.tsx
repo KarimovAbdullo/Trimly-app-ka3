@@ -21,6 +21,7 @@ import { useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Alert,
   Animated,
   AppState,
   Linking,
@@ -212,30 +213,56 @@ export default function StepTrackerScreen() {
     return () => sub.remove();
   }, [attachLiveWatcher]);
 
-  const handleStart = async () => {
-    setErrorText("");
-    setHeightCm(profile?.heightCm);
-
-    const capability = await checkPedometerCapability();
-    setDeviceSupported(capability.available);
-    setPermissionGranted(capability.granted);
-
-    if (!capability.available) {
-      setErrorText(t("stepTraining.pedometerUnavailable"));
-      return;
-    }
-    if (!capability.granted) {
-      setErrorText(t("stepTraining.pedometerPermissionRequired"));
-      return;
-    }
-
+  const beginTracking = useCallback(async () => {
     const start = new Date();
     dispatch(startSession({ startTimeISO: start.toISOString() }));
     setStartTime(start);
     setTotalSteps(0);
     setIsRunning(true);
     await attachLiveWatcher(0);
-  };
+  }, [attachLiveWatcher, dispatch]);
+
+  const handleStart = useCallback(async () => {
+    setErrorText("");
+    setHeightCm(profile?.heightCm);
+
+    // Skip redundant native permission re-check when mount already verified it.
+    // Re-checking adds bridge latency and makes the Start tap feel laggy.
+    if (!isReady || !deviceSupported || !permissionGranted) {
+      const capability = await checkPedometerCapability();
+      setDeviceSupported(capability.available);
+      setPermissionGranted(capability.granted);
+
+      if (!capability.available) {
+        setErrorText(t("stepTraining.pedometerUnavailable"));
+        return;
+      }
+      if (!capability.granted) {
+        setErrorText(t("stepTraining.pedometerPermissionRequired"));
+        return;
+      }
+    }
+
+    Alert.alert(
+      t("stepTraining.keepOpenTitle"),
+      t("stepTraining.keepOpenMessage"),
+      [
+        { text: t("stepTraining.cancel"), style: "cancel" },
+        {
+          text: t("stepTraining.continue"),
+          onPress: () => void beginTracking(),
+        },
+      ],
+      { cancelable: true },
+    );
+  }, [
+    beginTracking,
+    deviceSupported,
+    isReady,
+    permissionGranted,
+    profile?.heightCm,
+    t,
+  ]);
 
   const handleStop = async () => {
     stopPedometer(pedometerSubRef.current);

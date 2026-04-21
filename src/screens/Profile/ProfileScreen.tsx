@@ -5,15 +5,19 @@ import { clearDailyResults } from "@/store/slices/dailyResultsSlice";
 import { clearFoodTracking } from "@/store/slices/foodSlice";
 import { clearProfile } from "@/store/slices/profileSlice";
 import { clearSession } from "@/store/slices/stepSessionSlice";
+import { clearTrainingProgress } from "@/store/slices/trainingProgressSlice";
 import { clearWaterTracking } from "@/store/slices/waterSlice";
 import { persistor } from "@/store/store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Modal, ScrollView, TouchableOpacity, View } from "react-native";
+import { Linking, Modal, ScrollView, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./ProfileScreen.styles";
+
+const SUPPORT_EMAIL = "6510206@mail.ru";
+const SUPPORT_WHATSAPP_PHONE = "998936510206";
 
 export function ProfileScreen() {
   const { t } = useTranslation();
@@ -22,6 +26,17 @@ export function ProfileScreen() {
   const dispatch = useAppDispatch();
   const profile = useAppSelector((s) => s.profile);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
+
+  const openEmail = () => {
+    setShowSupport(false);
+    void Linking.openURL(`mailto:${SUPPORT_EMAIL}`);
+  };
+
+  const openWhatsApp = () => {
+    setShowSupport(false);
+    void Linking.openURL(`https://wa.me/${SUPPORT_WHATSAPP_PHONE}`);
+  };
 
   const clearAllData = async () => {
     dispatch(clearProfile());
@@ -29,6 +44,7 @@ export function ProfileScreen() {
     dispatch(clearFoodTracking());
     dispatch(clearWaterTracking());
     dispatch(clearSession(undefined as any));
+    dispatch(clearTrainingProgress());
     await persistor.purge();
     await AsyncStorage.multiRemove([
       "persist:root",
@@ -41,11 +57,16 @@ export function ProfileScreen() {
     router.replace("/confirm");
   };
 
-  const Item = ({ title, onPress, danger }: any) => (
+  const Item = ({ title, subtitle, onPress, danger }: any) => (
     <TouchableOpacity style={styles.item} onPress={onPress}>
-      <AppText style={[styles.itemText, danger && styles.itemDanger]}>
-        {title}
-      </AppText>
+      <View style={{ flex: 1, paddingRight: 8 }}>
+        <AppText style={[styles.itemText, danger && styles.itemDanger]}>
+          {title}
+        </AppText>
+        {subtitle ? (
+          <AppText style={styles.itemSubtitle}>{subtitle}</AppText>
+        ) : null}
+      </View>
       <AppText>›</AppText>
     </TouchableOpacity>
   );
@@ -78,8 +99,11 @@ export function ProfileScreen() {
             </AppText>
 
             <Item title={`🌐 ${t("profile.changeLanguage")}`} onPress={openLanguageModal} />
-            <Item title={`💬 ${t("profile.contactSupport")}`} onPress={() => {}} />
-            <Item title={`🚫 ${t("profile.removeAds")}`} onPress={() => {}} />
+            <Item
+              title={`💬 ${t("profile.contactSupport")}`}
+              subtitle={t("profile.supportSubtitle")}
+              onPress={() => setShowSupport(true)}
+            />
 
             <Item
               title={`🗑 ${t("profile.clearProfile")}`}
@@ -89,6 +113,47 @@ export function ProfileScreen() {
           </View>
         </ScrollView>
       </SafeAreaView>
+
+      <Modal visible={showSupport} transparent animationType="fade">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalBox}>
+            <AppText style={styles.modalTitle}>
+              {t("profile.supportModalTitle")}
+            </AppText>
+
+            <AppText style={styles.modalText}>
+              {t("profile.supportModalMessage")}
+            </AppText>
+
+            <View style={styles.modalActions}>
+              <TouchableOpacity
+                style={[styles.btn, styles.btnEmail]}
+                onPress={openEmail}
+              >
+                <AppText style={[styles.btnText, styles.btnTextWhite]}>
+                  ✉️  Email
+                </AppText>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={[styles.btn, styles.btnWhatsApp]}
+                onPress={openWhatsApp}
+              >
+                <AppText style={[styles.btnText, styles.btnTextWhite]}>
+                  💬  WhatsApp
+                </AppText>
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity
+              style={[styles.btn, styles.btnOutline, { marginTop: 10 }]}
+              onPress={() => setShowSupport(false)}
+            >
+              <AppText style={styles.btnText}>{t("common.cancel")}</AppText>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
       <Modal visible={showConfirm} transparent animationType="fade">
         <View style={styles.modalOverlay}>

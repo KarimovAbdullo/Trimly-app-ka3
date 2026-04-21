@@ -4,7 +4,7 @@ import type { RootState } from "@/store/store";
 import type { FoodItemLog } from "@/utils/foodStorage";
 import type { StepSession } from "@/utils/storage";
 import { LinearGradient } from "expo-linear-gradient";
-import * as moment from "moment";
+import moment from "moment";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {

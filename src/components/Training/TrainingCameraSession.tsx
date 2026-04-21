@@ -17,6 +17,7 @@ import {
 import { averageKneeAngleDeg, updateSquatFsm } from "@/utils/squatCountFromPose";
 import { useAppDispatch } from "@/store/hooks";
 import { addFitnessRepsForExerciseDate } from "@/store/slices/dailyResultsSlice";
+import { recordCompletion } from "@/store/slices/trainingProgressSlice";
 import moment from "moment";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -160,17 +161,22 @@ export function TrainingCameraSession({ exercise, onClose }: Props) {
   const handleClose = useCallback(() => {
     if (autoClosedRef.current) return;
     autoClosedRef.current = true;
+    const today = moment().format("YYYY-MM-DD");
     if (repCount > 0) {
       dispatch(
         addFitnessRepsForExerciseDate({
-          date: moment().format("YYYY-MM-DD"),
+          date: today,
           exerciseId: exercise.id,
           reps: repCount,
         }),
       );
     }
+    // Count a streak only for a full completion, not a partial stop.
+    if (repCount >= targetReps) {
+      dispatch(recordCompletion({ exerciseId: exercise.id, date: today }));
+    }
     onClose();
-  }, [dispatch, onClose, repCount, exercise.id]);
+  }, [dispatch, onClose, repCount, exercise.id, targetReps]);
 
   useEffect(() => {
     if (!repComplete) return;

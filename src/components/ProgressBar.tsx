@@ -1,5 +1,6 @@
 import { AppText } from "@/components/AppText";
 import { LinearGradient } from "expo-linear-gradient";
+import { useTranslation } from "react-i18next";
 import { Animated, StyleSheet, View } from "react-native";
 
 type ProgressBarProps = {
@@ -20,16 +21,19 @@ export function ProgressBar({
   liveSteps,
   formatCurrentMeters = (m) => `${Math.round(m)} m`,
 }: ProgressBarProps) {
+  const { t } = useTranslation();
   const widthInterpolate = progressAnim.interpolate({
     inputRange: [0, 1],
     outputRange: ["0%", "100%"],
   });
 
+  const remainingMeters = Math.max(0, goalMeters - currentMeters);
+
   return (
     <View style={styles.card}>
       <View style={styles.titleRow}>
         <AppText size={16} weight="semibold" color="#E5E7EB">
-          Bugungi progress
+          {t("stepTraining.todayProgress")}
         </AppText>
         <AppText size={18} weight="bold" color="#FACC15">
           {percent}%
@@ -57,9 +61,24 @@ export function ProgressBar({
         </AppText>
       </View>
 
+      <View style={styles.detailRow}>
+        <AppText size={13} color="#94A3B8">
+          {t("stepTraining.walked")}:{" "}
+          <AppText size={13} weight="semibold" color="#E2E8F0">
+            {formatCurrentMeters(currentMeters)}
+          </AppText>
+        </AppText>
+        <AppText size={13} color="#94A3B8">
+          {t("stepTraining.remaining")}:{" "}
+          <AppText size={13} weight="semibold" color="#E2E8F0">
+            {formatCurrentMeters(remainingMeters)}
+          </AppText>
+        </AppText>
+      </View>
+
       {typeof liveSteps === "number" ? (
         <AppText size={14} color="#94A3B8" style={styles.stepsLine}>
-          Hozirgi qadamlar:{" "}
+          {t("stepTraining.currentSteps")}:{" "}
           <AppText size={14} weight="semibold" color="#E2E8F0">
             {liveSteps.toLocaleString()}
           </AppText>
@@ -119,6 +138,12 @@ const styles = StyleSheet.create({
   },
   valuesRow: {
     marginTop: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  detailRow: {
+    marginTop: 6,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

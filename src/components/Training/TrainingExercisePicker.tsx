@@ -4,7 +4,7 @@ import {
 } from "@/constants/trainingExercises";
 import { useAppSelector } from "@/store/hooks";
 import { LinearGradient } from "expo-linear-gradient";
-import * as moment from "moment";
+import moment from "moment";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { TrainingExerciseCard } from "./TrainingExerciseCard";

@@ -68,6 +68,12 @@ export const styles = StyleSheet.create({
     color: "#0F172A",
   },
 
+  itemSubtitle: {
+    marginTop: 2,
+    fontSize: 12,
+    color: "#64748B",
+  },
+
   itemDanger: {
     color: "#DC2626",
   },
@@ -115,6 +121,14 @@ export const styles = StyleSheet.create({
 
   btnDanger: {
     backgroundColor: "#DC2626",
+  },
+
+  btnEmail: {
+    backgroundColor: "#4F46E5",
+  },
+
+  btnWhatsApp: {
+    backgroundColor: "#25D366",
   },
 
   btnText: {

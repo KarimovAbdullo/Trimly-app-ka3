@@ -3,28 +3,43 @@ import { TrainingExercisePicker } from "@/components/Training/TrainingExercisePi
 import {
   TRAINING_EXERCISES,
   type TrainingExerciseDef,
+  type TrainingExerciseId,
 } from "@/constants/trainingExercises";
 import { useAppSelector } from "@/store/hooks";
+import {
+  sessionsUntilNextBonus,
+  startingReps,
+  todayTargetReps,
+} from "@/utils/trainingProgression";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 
-function adjustedReps(base: number, gender?: "male" | "female", age?: number): number {
-  let reduction = 0;
-  if (gender === "female") reduction += 1;
-  if ((age ?? 0) > 40) reduction += 2;
-  return Math.max(3, base - reduction);
-}
-
 export default function TraningScreen() {
   const { t } = useTranslation();
   const profile = useAppSelector((s) => s.profile);
+  const trainingProgress = useAppSelector((s) => s.trainingProgress);
   const [activeExercise, setActiveExercise] =
     useState<TrainingExerciseDef | null>(null);
 
+  const progressionInputs = useMemo(
+    () => ({
+      age: profile?.age,
+      gender: profile?.gender,
+      heightCm: profile?.heightCm,
+      weightKg: profile?.weightKg,
+    }),
+    [profile?.age, profile?.gender, profile?.heightCm, profile?.weightKg],
+  );
+
   const exercises = useMemo(() => {
     return TRAINING_EXERCISES.map((ex) => {
-      const reps = adjustedReps(ex.targetReps, profile?.gender, profile?.age);
+      const id = ex.id as TrainingExerciseId;
+      const streak = trainingProgress[id]?.streak ?? 0;
+      const reps = todayTargetReps(id, progressionInputs, streak);
+      const base = startingReps(id, progressionInputs);
+      const sessionsLeft = sessionsUntilNextBonus(streak);
+
       const localizedTitle =
         ex.id === "squat"
           ? t("training.exercises.squat")
@@ -43,6 +58,7 @@ export default function TraningScreen() {
           : ex.id === "press"
             ? t("training.exercises.hintPress")
             : t("training.exercises.hintPushup");
+
       return {
         ...ex,
         title: localizedTitle,
@@ -50,9 +66,13 @@ export default function TraningScreen() {
         hint: localizedHint,
         targetReps: reps,
         subtitle: `${reps} ${t("training.reps")}`,
+        // extra fields for UI (read in picker)
+        streak,
+        sessionsUntilNext: sessionsLeft,
+        baseReps: base,
       };
     });
-  }, [profile?.age, profile?.gender, t]);
+  }, [progressionInputs, t, trainingProgress]);
 
   const handleCloseSession = useCallback(() => {
     setActiveExercise(null);

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "healthApp",
+    "name": "Trimly",
     "slug": "healthApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -48,8 +48,9 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash.png",
-          "resizeMode": "cover",
+          "image": "./assets/icon.png",
+          "imageWidth": 320,
+          "resizeMode": "contain",
           "backgroundColor": "#1A0F3D"
         }
       ]

@@ -1,0 +1,1361 @@
+{
+  "meals": [
+    {
+      "id": "b1",
+      "emoji": "🥣",
+      "name": {
+        "uz": "Suli bo'tqa va banan",
+        "ru": "Овсянка с бананом",
+        "en": "Oatmeal with banana"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 310,
+      "protein": 10,
+      "carbs": 55,
+      "fats": 6,
+      "ingredients": [
+        { "uz": "Suli 50g", "ru": "Овсянка 50г", "en": "Rolled oats 50g" },
+        { "uz": "Banan 1 dona", "ru": "Банан 1 шт", "en": "Banana 1 pc" },
+        { "uz": "Sut 200ml", "ru": "Молоко 200мл", "en": "Milk 200ml" },
+        { "uz": "Asal 1 ch.l", "ru": "Мёд 1 ч.л", "en": "Honey 1 tsp" },
+        { "uz": "Yong'oq 10g", "ru": "Грецкий орех 10г", "en": "Walnuts 10g" }
+      ],
+      "recipe": {
+        "uz": "Sulini sut bilan 5 daqiqa qaynating. Ustiga to'g'ralgan banan, asal va yong'oq qo'shing.",
+        "ru": "Варите овсянку в молоке 5 минут. Сверху положите нарезанный банан, мёд и орехи.",
+        "en": "Cook oats in milk for 5 minutes. Top with sliced banana, honey and walnuts."
+      },
+      "tips": {
+        "uz": "Uzoq to'q saqlaydi va kun bo'yi energiya beradi.",
+        "ru": "Надолго насыщает и даёт энергию на весь день.",
+        "en": "Keeps you full long and provides all-day energy."
+      }
+    },
+    {
+      "id": "b2",
+      "emoji": "🥑",
+      "name": {
+        "uz": "Tuxum va avokado",
+        "ru": "Яйца с авокадо",
+        "en": "Eggs with avocado"
+      },
+      "goals": ["lose", "maintain", "gain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": ["heart"],
+      "vegetarian": false,
+      "calories": 380,
+      "protein": 20,
+      "carbs": 12,
+      "fats": 28,
+      "ingredients": [
+        { "uz": "Tuxum 2 dona", "ru": "Яйца 2 шт", "en": "Eggs 2 pcs" },
+        { "uz": "Avokado ½ dona", "ru": "Авокадо ½", "en": "Avocado ½" },
+        { "uz": "Butun donli non 1 bo'lak", "ru": "Цельнозерновой хлеб 1 ломтик", "en": "Whole-grain bread 1 slice" },
+        { "uz": "Tuz, qalampir", "ru": "Соль, перец", "en": "Salt, pepper" }
+      ],
+      "recipe": {
+        "uz": "Tuxumni qovuring. Avokadoni yanchib nonga surting. Tuxumni ustiga qo'ying.",
+        "ru": "Пожарьте яйца. Раздавите авокадо и намажьте на хлеб. Положите сверху яйца.",
+        "en": "Fry the eggs. Mash avocado onto toast. Place eggs on top."
+      },
+      "tips": {
+        "uz": "Foydali yog'lar va oqsilga boy.",
+        "ru": "Богато полезными жирами и белком.",
+        "en": "Rich in healthy fats and protein."
+      }
+    },
+    {
+      "id": "b3",
+      "emoji": "🥛",
+      "name": {
+        "uz": "Grek yogurti va mevalar",
+        "ru": "Греческий йогурт с ягодами",
+        "en": "Greek yogurt with berries"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 220,
+      "protein": 18,
+      "carbs": 22,
+      "fats": 5,
+      "ingredients": [
+        { "uz": "Grek yogurti 200g", "ru": "Греческий йогурт 200г", "en": "Greek yogurt 200g" },
+        { "uz": "Qulupnay 100g", "ru": "Клубника 100г", "en": "Strawberries 100g" },
+        { "uz": "Chia urug'i 1 ch.l", "ru": "Семена чиа 1 ч.л", "en": "Chia seeds 1 tsp" },
+        { "uz": "Asal 1 ch.l", "ru": "Мёд 1 ч.л", "en": "Honey 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Yogurtni piyolaga soling, ustiga mevalar, chia va asal qo'shing.",
+        "ru": "Выложите йогурт в миску, сверху ягоды, чиа и мёд.",
+        "en": "Scoop yogurt into a bowl, top with berries, chia and honey."
+      },
+      "tips": {
+        "uz": "Oqsilga boy yengil nonushta.",
+        "ru": "Лёгкий завтрак, богатый белком.",
+        "en": "Light breakfast rich in protein."
+      }
+    },
+    {
+      "id": "b4",
+      "emoji": "🥤",
+      "name": {
+        "uz": "Oqsil kokteyli",
+        "ru": "Протеиновый коктейль",
+        "en": "Protein shake"
+      },
+      "goals": ["gain", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 420,
+      "protein": 30,
+      "carbs": 50,
+      "fats": 10,
+      "ingredients": [
+        { "uz": "Sut 300ml", "ru": "Молоко 300мл", "en": "Milk 300ml" },
+        { "uz": "Banan 1 dona", "ru": "Банан 1 шт", "en": "Banana 1 pc" },
+        { "uz": "Yong'oq yog'i 1 osh qoshiq", "ru": "Арахисовая паста 1 ст.л", "en": "Peanut butter 1 tbsp" },
+        { "uz": "Suli 30g", "ru": "Овсянка 30г", "en": "Rolled oats 30g" },
+        { "uz": "Asal 1 ch.l", "ru": "Мёд 1 ч.л", "en": "Honey 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Hamma masalliqlarni blenderga soling va silliq bo'lguncha aralashtiring.",
+        "ru": "Все ингредиенты взбейте в блендере до однородности.",
+        "en": "Blend all ingredients until smooth."
+      },
+      "tips": {
+        "uz": "Mushak oshirish uchun ideal.",
+        "ru": "Идеально для набора мышечной массы.",
+        "en": "Ideal for muscle gain."
+      }
+    },
+    {
+      "id": "b5",
+      "emoji": "🧀",
+      "name": {
+        "uz": "Tvorog va meva",
+        "ru": "Творог с фруктами",
+        "en": "Cottage cheese with fruit"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 260,
+      "protein": 22,
+      "carbs": 20,
+      "fats": 8,
+      "ingredients": [
+        { "uz": "Tvorog 200g", "ru": "Творог 200г", "en": "Cottage cheese 200g" },
+        { "uz": "Olma 1 dona", "ru": "Яблоко 1 шт", "en": "Apple 1 pc" },
+        { "uz": "Dolchin 1 chimdim", "ru": "Корица щепотка", "en": "Cinnamon a pinch" },
+        { "uz": "Asal 1 ch.l", "ru": "Мёд 1 ч.л", "en": "Honey 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Tvorogni piyolaga soling, to'g'ralgan olma, asal va dolchin qo'shing.",
+        "ru": "Выложите творог в миску, добавьте нарезанное яблоко, мёд и корицу.",
+        "en": "Scoop cottage cheese, add sliced apple, honey and cinnamon."
+      },
+      "tips": {
+        "uz": "Sekin hazm bo'luvchi oqsil — to'q tutadi.",
+        "ru": "Медленный белок — надолго насыщает.",
+        "en": "Slow-digesting protein — keeps you full."
+      }
+    },
+    {
+      "id": "b6",
+      "emoji": "🍞",
+      "name": {
+        "uz": "Butun donli non va yong'oq yog'i",
+        "ru": "Цельнозерновой тост с арахисовой пастой",
+        "en": "Whole-grain toast with peanut butter"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["diabetes"],
+      "vegetarian": true,
+      "calories": 360,
+      "protein": 14,
+      "carbs": 40,
+      "fats": 16,
+      "ingredients": [
+        { "uz": "Butun donli non 2 bo'lak", "ru": "Цельнозерновой хлеб 2 ломтика", "en": "Whole-grain bread 2 slices" },
+        { "uz": "Yong'oq yog'i 2 osh qoshiq", "ru": "Арахисовая паста 2 ст.л", "en": "Peanut butter 2 tbsp" },
+        { "uz": "Banan ½ dona", "ru": "Банан ½", "en": "Banana ½" },
+        { "uz": "Chia urug'i 1 ch.l", "ru": "Чиа 1 ч.л", "en": "Chia seeds 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Nonni quriting. Yong'oq yog'ini surting, ustiga bananni to'g'rab qo'ying.",
+        "ru": "Подсушите хлеб. Намажьте пасту, сверху нарезанный банан.",
+        "en": "Toast bread. Spread peanut butter, top with sliced banana."
+      },
+      "tips": {
+        "uz": "Trening oldidan yaxshi energiya manbai.",
+        "ru": "Хороший источник энергии перед тренировкой.",
+        "en": "Great energy source before training."
+      }
+    },
+    {
+      "id": "b7",
+      "emoji": "🍳",
+      "name": {
+        "uz": "Qo'ziqorinli omlet",
+        "ru": "Омлет с грибами",
+        "en": "Mushroom omelet"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 280,
+      "protein": 24,
+      "carbs": 8,
+      "fats": 16,
+      "ingredients": [
+        { "uz": "Tuxum 3 dona", "ru": "Яйца 3 шт", "en": "Eggs 3 pcs" },
+        { "uz": "Qo'ziqorin 100g", "ru": "Грибы 100г", "en": "Mushrooms 100g" },
+        { "uz": "Ismaloq 30g", "ru": "Шпинат 30г", "en": "Spinach 30g" },
+        { "uz": "Zaytun yog'i 1 ch.l", "ru": "Оливковое масло 1 ч.л", "en": "Olive oil 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Qo'ziqorin va ismaloqni yog'da qovuring. Urilgan tuxumni quying va 3-4 daqiqa pishiring.",
+        "ru": "Обжарьте грибы и шпинат в масле. Залейте взбитыми яйцами, готовьте 3-4 минуты.",
+        "en": "Sauté mushrooms and spinach in oil. Pour beaten eggs, cook 3-4 min."
+      },
+      "tips": {
+        "uz": "Past uglevodli, oqsilga boy.",
+        "ru": "Низкоуглеводный, богат белком.",
+        "en": "Low-carb, protein-rich."
+      }
+    },
+    {
+      "id": "b8",
+      "emoji": "🥚",
+      "name": {
+        "uz": "Sabzavotli tuxum",
+        "ru": "Яичница с овощами",
+        "en": "Scrambled eggs with vegetables"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 260,
+      "protein": 20,
+      "carbs": 10,
+      "fats": 15,
+      "ingredients": [
+        { "uz": "Tuxum 2 dona", "ru": "Яйца 2 шт", "en": "Eggs 2 pcs" },
+        { "uz": "Pomidor 1 dona", "ru": "Помидор 1 шт", "en": "Tomato 1 pc" },
+        { "uz": "Qalampir ½ dona", "ru": "Болгарский перец ½", "en": "Bell pepper ½" },
+        { "uz": "Piyoz ¼ dona", "ru": "Лук ¼", "en": "Onion ¼" }
+      ],
+      "recipe": {
+        "uz": "Piyoz, qalampir va pomidorni qovuring. Urilgan tuxumni quying, aralashtirib pishiring.",
+        "ru": "Обжарьте лук, перец и помидор. Добавьте взбитые яйца и готовьте, помешивая.",
+        "en": "Sauté onion, pepper, tomato. Pour in beaten eggs, stir until cooked."
+      },
+      "tips": {
+        "uz": "Har kuni tong uchun mos.",
+        "ru": "Подходит каждый день утром.",
+        "en": "Perfect daily morning option."
+      }
+    },
+    {
+      "id": "l1",
+      "emoji": "🍗",
+      "name": {
+        "uz": "Grillda tovuq, guruch va salat",
+        "ru": "Курица-гриль с рисом и салатом",
+        "en": "Grilled chicken with rice and salad"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 520,
+      "protein": 42,
+      "carbs": 55,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Tovuq ko'kragi 150g", "ru": "Куриная грудка 150г", "en": "Chicken breast 150g" },
+        { "uz": "Jigarrang guruch 80g (quruq)", "ru": "Бурый рис 80г (сухой)", "en": "Brown rice 80g (dry)" },
+        { "uz": "Bodring 1 dona", "ru": "Огурец 1 шт", "en": "Cucumber 1 pc" },
+        { "uz": "Pomidor 1 dona", "ru": "Помидор 1 шт", "en": "Tomato 1 pc" },
+        { "uz": "Zaytun yog'i 1 osh qoshiq", "ru": "Оливковое масло 1 ст.л", "en": "Olive oil 1 tbsp" }
+      ],
+      "recipe": {
+        "uz": "Tovuqni ziravor bilan aralashtiring va grillda 6-7 daqiqa pishiring. Guruchni qaynating, sabzavotlardan salat qiling.",
+        "ru": "Замаринуйте курицу специями и жарьте на гриле 6-7 минут. Отварите рис, сделайте салат из овощей.",
+        "en": "Marinate chicken with spices, grill 6-7 min. Boil rice, make a salad with vegetables."
+      },
+      "tips": {
+        "uz": "Balansli asosiy ovqat — oqsil + kompleks uglevod.",
+        "ru": "Сбалансированный обед — белок + сложные углеводы.",
+        "en": "Balanced meal — protein + complex carbs."
+      }
+    },
+    {
+      "id": "l2",
+      "emoji": "🐟",
+      "name": {
+        "uz": "Somon baliq va kinoa",
+        "ru": "Запечённый лосось с киноа",
+        "en": "Baked salmon with quinoa"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 480,
+      "protein": 38,
+      "carbs": 40,
+      "fats": 18,
+      "ingredients": [
+        { "uz": "Somon baliq 150g", "ru": "Лосось 150г", "en": "Salmon 150g" },
+        { "uz": "Kinoa 70g (quruq)", "ru": "Киноа 70г (сухая)", "en": "Quinoa 70g (dry)" },
+        { "uz": "Limon ½ dona", "ru": "Лимон ½", "en": "Lemon ½" },
+        { "uz": "Brokkoli 100g", "ru": "Брокколи 100г", "en": "Broccoli 100g" },
+        { "uz": "Zaytun yog'i", "ru": "Оливковое масло", "en": "Olive oil" }
+      ],
+      "recipe": {
+        "uz": "Baliqni limon bilan tuzlang, 180°C da 15 daqiqa pishiring. Kinoa va brokkolini alohida tayyorlang.",
+        "ru": "Посолите лосось с лимоном, запекайте при 180°C 15 мин. Отварите киноа и брокколи отдельно.",
+        "en": "Season salmon with lemon, bake at 180°C for 15 min. Cook quinoa and broccoli separately."
+      },
+      "tips": {
+        "uz": "Omega-3 yog' kislotalariga boy, yurak uchun foydali.",
+        "ru": "Богат омега-3, полезен для сердца.",
+        "en": "Rich in omega-3, heart-healthy."
+      }
+    },
+    {
+      "id": "l3",
+      "emoji": "🍲",
+      "name": {
+        "uz": "Yasmiqli sho'rva",
+        "ru": "Чечевичный суп",
+        "en": "Lentil soup"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 340,
+      "protein": 18,
+      "carbs": 50,
+      "fats": 6,
+      "ingredients": [
+        { "uz": "Yasmiq 100g", "ru": "Чечевица 100г", "en": "Lentils 100g" },
+        { "uz": "Sabzi 1 dona", "ru": "Морковь 1 шт", "en": "Carrot 1 pc" },
+        { "uz": "Piyoz 1 dona", "ru": "Лук 1 шт", "en": "Onion 1 pc" },
+        { "uz": "Sarimsoq 2 tish", "ru": "Чеснок 2 зубчика", "en": "Garlic 2 cloves" },
+        { "uz": "Ziravorlar", "ru": "Специи", "en": "Spices" }
+      ],
+      "recipe": {
+        "uz": "Sabzavotlarni mayda to'g'rab qovuring, yasmiq va 1 litr suv qo'shing. 25 daqiqa qaynating.",
+        "ru": "Обжарьте овощи, добавьте чечевицу и 1 литр воды. Варите 25 минут.",
+        "en": "Sauté veggies, add lentils and 1L water. Simmer 25 min."
+      },
+      "tips": {
+        "uz": "Tola va oqsilga boy, uzoq to'q tutadi.",
+        "ru": "Богат клетчаткой и белком, надолго насыщает.",
+        "en": "High in fiber and protein, very filling."
+      }
+    },
+    {
+      "id": "l4",
+      "emoji": "🥩",
+      "name": {
+        "uz": "Mol go'shtli xiyob",
+        "ru": "Тушёная говядина с овощами",
+        "en": "Beef stew with vegetables"
+      },
+      "goals": ["gain", "maintain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["heart", "obesity"],
+      "vegetarian": false,
+      "calories": 620,
+      "protein": 45,
+      "carbs": 30,
+      "fats": 28,
+      "ingredients": [
+        { "uz": "Mol go'shti 200g", "ru": "Говядина 200г", "en": "Beef 200g" },
+        { "uz": "Kartoshka 2 dona", "ru": "Картофель 2 шт", "en": "Potato 2 pcs" },
+        { "uz": "Sabzi 1 dona", "ru": "Морковь 1 шт", "en": "Carrot 1 pc" },
+        { "uz": "Piyoz 1 dona", "ru": "Лук 1 шт", "en": "Onion 1 pc" },
+        { "uz": "Ziravorlar", "ru": "Специи", "en": "Spices" }
+      ],
+      "recipe": {
+        "uz": "Go'shtni bo'laklab qovuring, sabzavotlarni qo'shing, suv quying va 40 daqiqa past olovda dimlang.",
+        "ru": "Нарежьте мясо, обжарьте, добавьте овощи, залейте водой и тушите 40 мин.",
+        "en": "Cube meat and brown, add veggies, pour water and simmer 40 min."
+      },
+      "tips": {
+        "uz": "Oqsil va kaloriyaga boy — og'ir ish kuni uchun.",
+        "ru": "Богат белком и калориями — для тяжёлого дня.",
+        "en": "High protein and calorie — for a heavy day."
+      }
+    },
+    {
+      "id": "l5",
+      "emoji": "🥪",
+      "name": {
+        "uz": "Tovuqli sendvich",
+        "ru": "Куриный сэндвич",
+        "en": "Chicken sandwich"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 430,
+      "protein": 30,
+      "carbs": 45,
+      "fats": 12,
+      "ingredients": [
+        { "uz": "Butun donli non 2 bo'lak", "ru": "Цельнозерновой хлеб 2 ломтика", "en": "Whole-grain bread 2 slices" },
+        { "uz": "Qaynatilgan tovuq 100g", "ru": "Варёная курица 100г", "en": "Boiled chicken 100g" },
+        { "uz": "Salat barglari", "ru": "Листья салата", "en": "Lettuce" },
+        { "uz": "Pomidor 1 dona", "ru": "Помидор 1 шт", "en": "Tomato 1 pc" },
+        { "uz": "Gorchitsa 1 ch.l", "ru": "Горчица 1 ч.л", "en": "Mustard 1 tsp" }
+      ],
+      "recipe": {
+        "uz": "Nonning ikki bo'lagi orasiga tovuq, salat, pomidor va gorchitsa qo'ying.",
+        "ru": "Между двумя ломтиками положите курицу, салат, помидор и горчицу.",
+        "en": "Layer chicken, lettuce, tomato and mustard between two slices."
+      },
+      "tips": {
+        "uz": "Tez va to'yimli tushlik.",
+        "ru": "Быстрый и сытный обед.",
+        "en": "Quick and filling lunch."
+      }
+    },
+    {
+      "id": "l6",
+      "emoji": "🥗",
+      "name": {
+        "uz": "Sabzavotli tofu",
+        "ru": "Тофу с овощами",
+        "en": "Tofu vegetable stir-fry"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 320,
+      "protein": 22,
+      "carbs": 25,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Tofu 150g", "ru": "Тофу 150г", "en": "Tofu 150g" },
+        { "uz": "Brokkoli 100g", "ru": "Брокколи 100г", "en": "Broccoli 100g" },
+        { "uz": "Qalampir 1 dona", "ru": "Болгарский перец 1", "en": "Bell pepper 1" },
+        { "uz": "Soya sousi 1 osh qoshiq", "ru": "Соевый соус 1 ст.л", "en": "Soy sauce 1 tbsp" },
+        { "uz": "Kunjut yog'i", "ru": "Кунжутное масло", "en": "Sesame oil" }
+      ],
+      "recipe": {
+        "uz": "Tofuni kublab qovuring, sabzavotlarni qo'shib aralashtirib pishiring, soya sousi quying.",
+        "ru": "Обжарьте кубики тофу, добавьте овощи и соевый соус, готовьте помешивая.",
+        "en": "Sear tofu cubes, add veggies and soy sauce, stir-fry."
+      },
+      "tips": {
+        "uz": "Oqsilga boy vegetarian variant.",
+        "ru": "Вегетарианский вариант с высоким содержанием белка.",
+        "en": "High-protein vegetarian option."
+      }
+    },
+    {
+      "id": "l7",
+      "emoji": "🫘",
+      "name": {
+        "uz": "Noxat salati",
+        "ru": "Салат из нута",
+        "en": "Chickpea salad"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 310,
+      "protein": 16,
+      "carbs": 40,
+      "fats": 10,
+      "ingredients": [
+        { "uz": "Qaynatilgan noxat 150g", "ru": "Варёный нут 150г", "en": "Boiled chickpeas 150g" },
+        { "uz": "Bodring 1 dona", "ru": "Огурец 1 шт", "en": "Cucumber 1 pc" },
+        { "uz": "Pomidor 1 dona", "ru": "Помидор 1 шт", "en": "Tomato 1 pc" },
+        { "uz": "Feta pishloq 30g", "ru": "Сыр фета 30г", "en": "Feta cheese 30g" },
+        { "uz": "Limon sharbati", "ru": "Лимонный сок", "en": "Lemon juice" }
+      ],
+      "recipe": {
+        "uz": "Sabzavotlarni to'g'rang, noxat va pishloqqa qo'shing, limon sharbati va zaytun yog'i quying.",
+        "ru": "Нарежьте овощи, смешайте с нутом и сыром, заправьте лимоном и оливковым маслом.",
+        "en": "Chop veggies, mix with chickpeas and feta, dress with lemon and olive oil."
+      },
+      "tips": {
+        "uz": "Yengil va kaloriya kam.",
+        "ru": "Лёгкий и низкокалорийный.",
+        "en": "Light and low-calorie."
+      }
+    },
+    {
+      "id": "l8",
+      "emoji": "🐠",
+      "name": {
+        "uz": "Baliq va kartoshka pyuresi",
+        "ru": "Рыба с картофельным пюре",
+        "en": "Fish with mashed potatoes"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 490,
+      "protein": 34,
+      "carbs": 45,
+      "fats": 16,
+      "ingredients": [
+        { "uz": "Oq baliq 180g", "ru": "Белая рыба 180г", "en": "White fish 180g" },
+        { "uz": "Kartoshka 250g", "ru": "Картофель 250г", "en": "Potatoes 250g" },
+        { "uz": "Sut 50ml", "ru": "Молоко 50мл", "en": "Milk 50ml" },
+        { "uz": "Sariyog' 10g", "ru": "Сливочное масло 10г", "en": "Butter 10g" },
+        { "uz": "Tuz, qalampir", "ru": "Соль, перец", "en": "Salt, pepper" }
+      ],
+      "recipe": {
+        "uz": "Baliqni qizdirilgan tovada ikki tomonidan pishiring. Kartoshkani qaynating, yanchib sut va yog' qo'shing.",
+        "ru": "Обжарьте рыбу с двух сторон. Отварите картофель, растолките с молоком и маслом.",
+        "en": "Pan-fry fish on both sides. Boil potatoes, mash with milk and butter."
+      },
+      "tips": {
+        "uz": "Oson hazm bo'ladi.",
+        "ru": "Легко усваивается.",
+        "en": "Easy to digest."
+      }
+    },
+    {
+      "id": "d1",
+      "emoji": "🍜",
+      "name": {
+        "uz": "Tovuqli lag'mon sho'rvasi",
+        "ru": "Куриный суп с лапшой",
+        "en": "Chicken noodle soup"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 340,
+      "protein": 28,
+      "carbs": 35,
+      "fats": 8,
+      "ingredients": [
+        { "uz": "Tovuq go'shti 120g", "ru": "Курица 120г", "en": "Chicken 120g" },
+        { "uz": "Lag'mon 60g", "ru": "Лапша 60г", "en": "Noodles 60g" },
+        { "uz": "Sabzi 1 dona", "ru": "Морковь 1 шт", "en": "Carrot 1 pc" },
+        { "uz": "Piyoz ½ dona", "ru": "Лук ½", "en": "Onion ½" },
+        { "uz": "Jambil barglari", "ru": "Зелень", "en": "Herbs" }
+      ],
+      "recipe": {
+        "uz": "Tovuqni qaynatib, sabzavotlar va lag'monni qo'shing, 10 daqiqa pishiring.",
+        "ru": "Отварите курицу, добавьте овощи и лапшу, варите 10 мин.",
+        "en": "Boil chicken, add veggies and noodles, simmer 10 min."
+      },
+      "tips": {
+        "uz": "Yengil va tez hazm bo'ladi, kechki ovqatga mos.",
+        "ru": "Лёгкий и быстро усваиваемый ужин.",
+        "en": "Light and easy to digest for dinner."
+      }
+    },
+    {
+      "id": "d2",
+      "emoji": "🐟",
+      "name": {
+        "uz": "Pechdagi baliq va sabzavot",
+        "ru": "Запечённая рыба с овощами",
+        "en": "Baked cod with vegetables"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 380,
+      "protein": 36,
+      "carbs": 20,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Treska baliq 180g", "ru": "Треска 180г", "en": "Cod 180g" },
+        { "uz": "Seletra 1 dona", "ru": "Цукини 1 шт", "en": "Zucchini 1 pc" },
+        { "uz": "Qalampir 1 dona", "ru": "Болгарский перец 1", "en": "Bell pepper 1" },
+        { "uz": "Limon ½ dona", "ru": "Лимон ½", "en": "Lemon ½" },
+        { "uz": "Zaytun yog'i", "ru": "Оливковое масло", "en": "Olive oil" }
+      ],
+      "recipe": {
+        "uz": "Baliq va sabzavotlarga yog' va limon quyib, 180°C da 20 daqiqa pishiring.",
+        "ru": "Полейте рыбу и овощи маслом и лимоном, запекайте при 180°C 20 мин.",
+        "en": "Drizzle fish and veggies with oil and lemon, bake at 180°C for 20 min."
+      },
+      "tips": {
+        "uz": "Kam yog', oqsil va omega-3 ga boy.",
+        "ru": "Мало жира, много белка и омега-3.",
+        "en": "Low-fat, rich in protein and omega-3."
+      }
+    },
+    {
+      "id": "d3",
+      "emoji": "🍚",
+      "name": {
+        "uz": "Kinoa idishi",
+        "ru": "Миска киноа",
+        "en": "Quinoa bowl"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 380,
+      "protein": 15,
+      "carbs": 55,
+      "fats": 12,
+      "ingredients": [
+        { "uz": "Kinoa 80g (quruq)", "ru": "Киноа 80г (сухая)", "en": "Quinoa 80g (dry)" },
+        { "uz": "Avokado ½ dona", "ru": "Авокадо ½", "en": "Avocado ½" },
+        { "uz": "Cherry pomidor 100g", "ru": "Помидоры черри 100г", "en": "Cherry tomatoes 100g" },
+        { "uz": "Qora loviya 50g", "ru": "Чёрная фасоль 50г", "en": "Black beans 50g" },
+        { "uz": "Limon sharbati", "ru": "Лимонный сок", "en": "Lemon juice" }
+      ],
+      "recipe": {
+        "uz": "Kinoani qaynating, piyolaga soling, ustiga boshqa masalliqlar qo'yib, limon quying.",
+        "ru": "Отварите киноа, выложите в миску, сверху остальные ингредиенты и лимон.",
+        "en": "Cook quinoa, place in bowl, top with other ingredients and lemon."
+      },
+      "tips": {
+        "uz": "To'liq oqsil manbai — barcha 9 ta amino kislota.",
+        "ru": "Полный источник белка — все 9 аминокислот.",
+        "en": "Complete protein — all 9 amino acids."
+      }
+    },
+    {
+      "id": "d4",
+      "emoji": "🍝",
+      "name": {
+        "uz": "Pomidor-rayxon makaron",
+        "ru": "Паста с томатом и базиликом",
+        "en": "Tomato-basil pasta"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["diabetes"],
+      "vegetarian": true,
+      "calories": 450,
+      "protein": 14,
+      "carbs": 70,
+      "fats": 12,
+      "ingredients": [
+        { "uz": "Butun donli makaron 80g", "ru": "Цельнозерновая паста 80г", "en": "Whole-grain pasta 80g" },
+        { "uz": "Pomidor 2 dona", "ru": "Помидор 2 шт", "en": "Tomato 2 pcs" },
+        { "uz": "Rayxon barglari", "ru": "Базилик", "en": "Basil leaves" },
+        { "uz": "Sarimsoq 2 tish", "ru": "Чеснок 2 зубчика", "en": "Garlic 2 cloves" },
+        { "uz": "Parmezan 20g", "ru": "Пармезан 20г", "en": "Parmesan 20g" }
+      ],
+      "recipe": {
+        "uz": "Makaronni qaynating. Sarimsoq va pomidorni qovuring, pishgan makaron va rayxon qo'shing. Pishloq seping.",
+        "ru": "Отварите пасту. Обжарьте чеснок и помидор, смешайте с пастой и базиликом. Посыпьте сыром.",
+        "en": "Cook pasta. Sauté garlic and tomato, mix with pasta and basil. Sprinkle with cheese."
+      },
+      "tips": {
+        "uz": "Trening kuni uchun yaxshi.",
+        "ru": "Хорошо после тренировки.",
+        "en": "Good after training."
+      }
+    },
+    {
+      "id": "d5",
+      "emoji": "🍠",
+      "name": {
+        "uz": "Tovuq ko'kragi va shirin kartoshka",
+        "ru": "Куриная грудка с бататом",
+        "en": "Chicken breast with sweet potato"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 500,
+      "protein": 40,
+      "carbs": 50,
+      "fats": 12,
+      "ingredients": [
+        { "uz": "Tovuq ko'kragi 150g", "ru": "Куриная грудка 150г", "en": "Chicken breast 150g" },
+        { "uz": "Shirin kartoshka 200g", "ru": "Батат 200г", "en": "Sweet potato 200g" },
+        { "uz": "Ismaloq 50g", "ru": "Шпинат 50г", "en": "Spinach 50g" },
+        { "uz": "Zaytun yog'i 1 osh qoshiq", "ru": "Оливковое масло 1 ст.л", "en": "Olive oil 1 tbsp" },
+        { "uz": "Ziravorlar", "ru": "Специи", "en": "Spices" }
+      ],
+      "recipe": {
+        "uz": "Tovuqni tuzlab grillda pishiring. Shirin kartoshkani kublab pechda 25 daqiqa pishiring. Ismaloqni qovuring.",
+        "ru": "Посолите курицу, жарьте на гриле. Запеките бататом кубиками 25 мин. Обжарьте шпинат.",
+        "en": "Season chicken, grill. Bake sweet potato cubes 25 min. Sauté spinach."
+      },
+      "tips": {
+        "uz": "Mushak tiklash uchun ideal.",
+        "ru": "Идеально для восстановления мышц.",
+        "en": "Ideal for muscle recovery."
+      }
+    },
+    {
+      "id": "d6",
+      "emoji": "🥘",
+      "name": {
+        "uz": "Sabzavotli kari",
+        "ru": "Овощное карри",
+        "en": "Vegetable curry"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["young"],
+      "avoidDiseases": ["gastritis"],
+      "vegetarian": true,
+      "calories": 360,
+      "protein": 12,
+      "carbs": 50,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Noxat 100g", "ru": "Нут 100г", "en": "Chickpeas 100g" },
+        { "uz": "Gulkaram 150g", "ru": "Цветная капуста 150г", "en": "Cauliflower 150g" },
+        { "uz": "Kokos suti 100ml", "ru": "Кокосовое молоко 100мл", "en": "Coconut milk 100ml" },
+        { "uz": "Kari ziravori", "ru": "Карри", "en": "Curry powder" },
+        { "uz": "Piyoz, sarimsoq", "ru": "Лук, чеснок", "en": "Onion, garlic" }
+      ],
+      "recipe": {
+        "uz": "Piyoz va sarimsoqni qovuring, sabzavotlar va kari qo'shing, kokos suti quyib 20 daqiqa qaynating.",
+        "ru": "Обжарьте лук с чесноком, добавьте овощи и карри, залейте молоком и тушите 20 мин.",
+        "en": "Sauté onion and garlic, add veggies and curry, pour coconut milk, simmer 20 min."
+      },
+      "tips": {
+        "uz": "Issiqqa chidamli, kechqurun tanani qizdiradi.",
+        "ru": "Согревает тело вечером.",
+        "en": "Warming evening meal."
+      }
+    },
+    {
+      "id": "d7",
+      "emoji": "🍖",
+      "name": {
+        "uz": "Mol go'shtli kotlet va sabzavot",
+        "ru": "Говяжьи фрикадельки с овощами",
+        "en": "Beef meatballs with vegetables"
+      },
+      "goals": ["gain", "maintain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["obesity", "heart"],
+      "vegetarian": false,
+      "calories": 560,
+      "protein": 38,
+      "carbs": 35,
+      "fats": 28,
+      "ingredients": [
+        { "uz": "Mol go'shti qiymasi 200g", "ru": "Говяжий фарш 200г", "en": "Ground beef 200g" },
+        { "uz": "Piyoz ½ dona", "ru": "Лук ½", "en": "Onion ½" },
+        { "uz": "Tuxum ½ dona", "ru": "Яйцо ½", "en": "Egg ½" },
+        { "uz": "Sabzavotlar (brokkoli, qalampir)", "ru": "Овощи (брокколи, перец)", "en": "Vegetables (broccoli, pepper)" },
+        { "uz": "Ziravorlar", "ru": "Специи", "en": "Spices" }
+      ],
+      "recipe": {
+        "uz": "Qiymaga piyoz, tuxum va ziravor qo'shib, kotlet shakli bering. Yog'da qovuring. Sabzavotlarni qo'shib pishiring.",
+        "ru": "Смешайте фарш с луком, яйцом и специями, сформируйте фрикадельки. Обжарьте с овощами.",
+        "en": "Mix meat with onion, egg, spices. Shape meatballs, fry with vegetables."
+      },
+      "tips": {
+        "uz": "Yuqori kaloriyali — og'ir ish kuni uchun.",
+        "ru": "Высококалорийно — для активного дня.",
+        "en": "High-calorie — for an active day."
+      }
+    },
+    {
+      "id": "d8",
+      "emoji": "🥒",
+      "name": {
+        "uz": "Kefir, bodring va javdar non",
+        "ru": "Кефир с огурцом и ржаным хлебом",
+        "en": "Kefir with cucumber and rye bread"
+      },
+      "goals": ["lose"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 210,
+      "protein": 12,
+      "carbs": 28,
+      "fats": 5,
+      "ingredients": [
+        { "uz": "Kefir 300ml", "ru": "Кефир 300мл", "en": "Kefir 300ml" },
+        { "uz": "Bodring 1 dona", "ru": "Огурец 1 шт", "en": "Cucumber 1 pc" },
+        { "uz": "Javdar non 1 bo'lak", "ru": "Ржаной хлеб 1 ломтик", "en": "Rye bread 1 slice" },
+        { "uz": "Jambil barglari", "ru": "Зелень", "en": "Fresh herbs" }
+      ],
+      "recipe": {
+        "uz": "Bodringni to'g'rab kefirga qo'ying, jambil seping, javdar non bilan iste'mol qiling.",
+        "ru": "Нарежьте огурец в кефир, добавьте зелень, подавайте с ржаным хлебом.",
+        "en": "Chop cucumber into kefir, add herbs, serve with rye bread."
+      },
+      "tips": {
+        "uz": "Kech ovqatga ideal — yengil va ichakka foydali.",
+        "ru": "Идеально на поздний ужин — лёгко и полезно для кишечника.",
+        "en": "Ideal light late dinner, gut-friendly."
+      }
+    },
+    {
+      "id": "b9",
+      "emoji": "🍳",
+      "name": {
+        "uz": "Shakshuka",
+        "ru": "Шакшука",
+        "en": "Shakshuka"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 320,
+      "protein": 22,
+      "carbs": 18,
+      "fats": 18,
+      "ingredients": [
+        { "uz": "Tuxum 3 dona", "ru": "Яйца 3 шт", "en": "Eggs 3 pcs" },
+        { "uz": "Pomidor 2 dona", "ru": "Помидор 2 шт", "en": "Tomato 2 pcs" },
+        { "uz": "Qalampir 1 dona", "ru": "Болгарский перец 1", "en": "Bell pepper 1" },
+        { "uz": "Piyoz ½ dona", "ru": "Лук ½", "en": "Onion ½" },
+        { "uz": "Sarimsoq, ziravorlar", "ru": "Чеснок, специи", "en": "Garlic, spices" }
+      ],
+      "recipe": {
+        "uz": "Piyoz, qalampir va pomidorni qovuring, sous hosil qiling. Tuxumni yoriq qilib qo'ying, yopiq holatda 5-6 daqiqa pishiring.",
+        "ru": "Обжарьте лук, перец и помидор до соуса. Разбейте сверху яйца и готовьте под крышкой 5-6 мин.",
+        "en": "Sauté onion, pepper, tomato into a sauce. Crack eggs on top, cover and cook 5-6 min."
+      },
+      "tips": {
+        "uz": "Bir idishda tayyorlanadi, lazzatli va to'yimli.",
+        "ru": "Готовится на одной сковороде, сытно и вкусно.",
+        "en": "One-pan meal, hearty and flavorful."
+      }
+    },
+    {
+      "id": "b10",
+      "emoji": "🥜",
+      "name": {
+        "uz": "Yong'oqli granola va sut",
+        "ru": "Гранола с орехами и молоком",
+        "en": "Nutty granola with milk"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": ["diabetes"],
+      "vegetarian": true,
+      "calories": 440,
+      "protein": 14,
+      "carbs": 58,
+      "fats": 18,
+      "ingredients": [
+        { "uz": "Granola 60g", "ru": "Гранола 60г", "en": "Granola 60g" },
+        { "uz": "Sut yoki bodom suti 250ml", "ru": "Молоко или миндальное 250мл", "en": "Milk or almond milk 250ml" },
+        { "uz": "Banan 1 dona", "ru": "Банан 1 шт", "en": "Banana 1 pc" },
+        { "uz": "Yong'oq aralash 15g", "ru": "Микс орехов 15г", "en": "Mixed nuts 15g" },
+        { "uz": "Quritilgan meva 10g", "ru": "Сухофрукты 10г", "en": "Dried fruit 10g" }
+      ],
+      "recipe": {
+        "uz": "Granolani piyolaga soling, ustidan sut quying, to'g'ralgan banan va yong'oq seping.",
+        "ru": "Выложите гранолу, залейте молоком, добавьте банан и орехи.",
+        "en": "Place granola in a bowl, pour milk, top with banana and nuts."
+      },
+      "tips": {
+        "uz": "Kaloriyaga boy, energiya kerak bo'lgan kun uchun.",
+        "ru": "Калорийно — для энергичного дня.",
+        "en": "Calorie-dense, great for an active day."
+      }
+    },
+    {
+      "id": "b11",
+      "emoji": "🥣",
+      "name": {
+        "uz": "Grechka va kefir",
+        "ru": "Гречка с кефиром",
+        "en": "Buckwheat with kefir"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 280,
+      "protein": 14,
+      "carbs": 45,
+      "fats": 5,
+      "ingredients": [
+        { "uz": "Grechka 50g (quruq)", "ru": "Гречка 50г (сухая)", "en": "Buckwheat 50g (dry)" },
+        { "uz": "Kefir 200ml", "ru": "Кефир 200мл", "en": "Kefir 200ml" },
+        { "uz": "Kashnich barglari", "ru": "Зелень", "en": "Fresh herbs" },
+        { "uz": "Tuz bir chimdim", "ru": "Соль щепотка", "en": "Pinch of salt" }
+      ],
+      "recipe": {
+        "uz": "Grechkani qaynating va sovutib qo'ying. Kefir quying, kashnich seping.",
+        "ru": "Отварите гречку и остудите. Залейте кефиром, посыпьте зеленью.",
+        "en": "Boil buckwheat and cool. Pour kefir, sprinkle herbs."
+      },
+      "tips": {
+        "uz": "Qandli diabet uchun xavfsiz — past glikemik indeks.",
+        "ru": "Безопасно для диабета — низкий ГИ.",
+        "en": "Diabetes-safe — low glycemic index."
+      }
+    },
+    {
+      "id": "b12",
+      "emoji": "🥞",
+      "name": {
+        "uz": "Banan oladka",
+        "ru": "Банановые оладьи",
+        "en": "Banana pancakes"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": ["diabetes"],
+      "vegetarian": true,
+      "calories": 400,
+      "protein": 16,
+      "carbs": 55,
+      "fats": 12,
+      "ingredients": [
+        { "uz": "Banan 2 dona", "ru": "Банан 2 шт", "en": "Banana 2 pcs" },
+        { "uz": "Tuxum 2 dona", "ru": "Яйца 2 шт", "en": "Eggs 2 pcs" },
+        { "uz": "Suli uni 40g", "ru": "Овсяная мука 40г", "en": "Oat flour 40g" },
+        { "uz": "Sut 50ml", "ru": "Молоко 50мл", "en": "Milk 50ml" },
+        { "uz": "Dolchin", "ru": "Корица", "en": "Cinnamon" }
+      ],
+      "recipe": {
+        "uz": "Bananni yanching, tuxum, un va sut bilan aralashtiring. Tovada qizdirilgan yog'da kichik oladkalarni ikki tomondan pishiring.",
+        "ru": "Разомните банан, смешайте с яйцами, мукой и молоком. Жарьте небольшие оладьи с двух сторон.",
+        "en": "Mash banana, mix with eggs, flour and milk. Cook small pancakes on both sides."
+      },
+      "tips": {
+        "uz": "Shakar qo'shilmaydi — tabiiy shirinlik.",
+        "ru": "Без добавленного сахара — естественная сладость.",
+        "en": "No added sugar — naturally sweet."
+      }
+    },
+    {
+      "id": "b13",
+      "emoji": "🧇",
+      "name": {
+        "uz": "Syrniki (tvorog kokoslari)",
+        "ru": "Сырники",
+        "en": "Syrniki (cottage cheese pancakes)"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 380,
+      "protein": 26,
+      "carbs": 32,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Tvorog 200g", "ru": "Творог 200г", "en": "Cottage cheese 200g" },
+        { "uz": "Tuxum 1 dona", "ru": "Яйцо 1 шт", "en": "Egg 1 pc" },
+        { "uz": "Un 2 osh qoshiq", "ru": "Мука 2 ст.л", "en": "Flour 2 tbsp" },
+        { "uz": "Shakar 1 osh qoshiq", "ru": "Сахар 1 ст.л", "en": "Sugar 1 tbsp" },
+        { "uz": "Smetana 2 osh qoshiq", "ru": "Сметана 2 ст.л", "en": "Sour cream 2 tbsp" }
+      ],
+      "recipe": {
+        "uz": "Tvorog, tuxum, un va shakarni aralashtirib, mayda kokoslarga ajrating. Qizdirilgan yog'da ikki tomondan qizdiring.",
+        "ru": "Смешайте творог, яйцо, муку и сахар. Сформируйте сырники и обжарьте с двух сторон.",
+        "en": "Mix cottage cheese, egg, flour, sugar. Shape into patties, fry on both sides."
+      },
+      "tips": {
+        "uz": "Oqsilga boy an'anaviy nonushta.",
+        "ru": "Традиционный завтрак с высоким белком.",
+        "en": "Traditional high-protein breakfast."
+      }
+    },
+    {
+      "id": "l9",
+      "emoji": "🥣",
+      "name": {
+        "uz": "Tovuqli yengil sho'rva",
+        "ru": "Лёгкий куриный суп",
+        "en": "Light chicken soup"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch", "dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 260,
+      "protein": 24,
+      "carbs": 22,
+      "fats": 6,
+      "ingredients": [
+        { "uz": "Tovuq ko'kragi 120g", "ru": "Куриная грудка 120г", "en": "Chicken breast 120g" },
+        { "uz": "Sabzi 1 dona", "ru": "Морковь 1 шт", "en": "Carrot 1 pc" },
+        { "uz": "Kartoshka 1 dona", "ru": "Картофель 1 шт", "en": "Potato 1 pc" },
+        { "uz": "Kashnich", "ru": "Зелень", "en": "Fresh herbs" },
+        { "uz": "Tuz, qalampir", "ru": "Соль, перец", "en": "Salt, pepper" }
+      ],
+      "recipe": {
+        "uz": "Tovuqni qaynatib, suvidan bir qismini oling. Sabzi va kartoshkani to'g'rab qo'shing, 15 daqiqa pishiring.",
+        "ru": "Отварите курицу. Добавьте нарезанные морковь и картофель, варите 15 мин.",
+        "en": "Boil chicken. Add chopped carrot and potato, simmer 15 min."
+      },
+      "tips": {
+        "uz": "Yengil, me'daga foydali — gastrit va kasallikdan keyin mos.",
+        "ru": "Лёгкий и полезный для желудка — подходит при гастрите.",
+        "en": "Easy on the stomach — good for gastritis recovery."
+      }
+    },
+    {
+      "id": "l10",
+      "emoji": "🫛",
+      "name": {
+        "uz": "Oqsilli guruch va loviya",
+        "ru": "Рис с фасолью (высокобелковый)",
+        "en": "High-protein rice and beans"
+      },
+      "goals": ["lose", "maintain", "gain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 450,
+      "protein": 20,
+      "carbs": 70,
+      "fats": 8,
+      "ingredients": [
+        { "uz": "Jigarrang guruch 80g (quruq)", "ru": "Бурый рис 80г (сухой)", "en": "Brown rice 80g (dry)" },
+        { "uz": "Qora loviya 100g", "ru": "Чёрная фасоль 100г", "en": "Black beans 100g" },
+        { "uz": "Sarimsoq 2 tish", "ru": "Чеснок 2 зубчика", "en": "Garlic 2 cloves" },
+        { "uz": "Zira, qalampir", "ru": "Зира, перец", "en": "Cumin, pepper" },
+        { "uz": "Zaytun yog'i", "ru": "Оливковое масло", "en": "Olive oil" }
+      ],
+      "recipe": {
+        "uz": "Guruchni qaynating. Sarimsoqni yog'da qovurib, loviya va ziravor qo'shing. Guruch bilan aralashtiring.",
+        "ru": "Отварите рис. Обжарьте чеснок со специями, добавьте фасоль. Смешайте с рисом.",
+        "en": "Cook rice. Sauté garlic with spices, add beans. Mix with rice."
+      },
+      "tips": {
+        "uz": "Vegetarian uchun to'liq oqsil manbai — barcha amino kislotalar.",
+        "ru": "Полный белок для вегетарианцев — все аминокислоты.",
+        "en": "Complete protein for vegetarians — all amino acids."
+      }
+    },
+    {
+      "id": "l11",
+      "emoji": "🥗",
+      "name": {
+        "uz": "Tvorogli yashil salat",
+        "ru": "Салат с творогом",
+        "en": "Cottage cheese green salad"
+      },
+      "goals": ["lose", "maintain"],
+      "mealTimes": ["lunch", "dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 250,
+      "protein": 22,
+      "carbs": 14,
+      "fats": 10,
+      "ingredients": [
+        { "uz": "Tvorog 150g", "ru": "Творог 150г", "en": "Cottage cheese 150g" },
+        { "uz": "Bodring 1 dona", "ru": "Огурец 1 шт", "en": "Cucumber 1 pc" },
+        { "uz": "Redish 3 dona", "ru": "Редис 3 шт", "en": "Radish 3 pcs" },
+        { "uz": "Ukrop, jambil", "ru": "Укроп, петрушка", "en": "Dill, parsley" },
+        { "uz": "Zaytun yog'i 1 osh qoshiq", "ru": "Оливковое масло 1 ст.л", "en": "Olive oil 1 tbsp" }
+      ],
+      "recipe": {
+        "uz": "Sabzavotlarni to'g'rab, tvorog va o'simlik yog'i bilan aralashtiring. Jambil seping.",
+        "ru": "Нарежьте овощи, смешайте с творогом и маслом, посыпьте зеленью.",
+        "en": "Chop veggies, mix with cottage cheese and oil, sprinkle with herbs."
+      },
+      "tips": {
+        "uz": "Juda oson va yengil — vazn nazorat qilganlar uchun ideal.",
+        "ru": "Очень легко и низкокалорийно — идеально при диете.",
+        "en": "Very easy and light — perfect for weight control."
+      }
+    },
+    {
+      "id": "l12",
+      "emoji": "🍚",
+      "name": {
+        "uz": "Mol go'shtli plov",
+        "ru": "Плов с говядиной",
+        "en": "Beef pilaf"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["lunch"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["obesity", "heart"],
+      "vegetarian": false,
+      "calories": 680,
+      "protein": 38,
+      "carbs": 75,
+      "fats": 24,
+      "ingredients": [
+        { "uz": "Mol go'shti 180g", "ru": "Говядина 180г", "en": "Beef 180g" },
+        { "uz": "Guruch 120g (quruq)", "ru": "Рис 120г (сухой)", "en": "Rice 120g (dry)" },
+        { "uz": "Sabzi 2 dona", "ru": "Морковь 2 шт", "en": "Carrot 2 pcs" },
+        { "uz": "Piyoz 1 dona", "ru": "Лук 1 шт", "en": "Onion 1 pc" },
+        { "uz": "O'simlik yog'i, zira", "ru": "Масло, зира", "en": "Oil, cumin" }
+      ],
+      "recipe": {
+        "uz": "Go'shtni qovuring, piyoz va sabzi qo'shing. Guruch va suv quyib yopiq holda 30 daqiqa dimlang.",
+        "ru": "Обжарьте мясо, добавьте лук и морковь. Всыпьте рис, залейте водой, тушите 30 мин.",
+        "en": "Brown beef, add onion and carrot. Add rice and water, simmer covered 30 min."
+      },
+      "tips": {
+        "uz": "An'anaviy, to'yimli ovqat. Og'ir jismoniy ish kuni uchun.",
+        "ru": "Традиционное сытное блюдо. Для тяжёлого дня.",
+        "en": "Traditional hearty meal. For a heavy-duty day."
+      }
+    },
+    {
+      "id": "l13",
+      "emoji": "🧀",
+      "name": {
+        "uz": "Sabzavotli lazanya",
+        "ru": "Овощная лазанья",
+        "en": "Vegetable lasagna"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["lunch", "dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 520,
+      "protein": 22,
+      "carbs": 60,
+      "fats": 20,
+      "ingredients": [
+        { "uz": "Lazanya varaqlari 80g", "ru": "Листы лазаньи 80г", "en": "Lasagna sheets 80g" },
+        { "uz": "Seletra, baqlajon", "ru": "Цукини, баклажан", "en": "Zucchini, eggplant" },
+        { "uz": "Pomidor sousi 150g", "ru": "Томатный соус 150г", "en": "Tomato sauce 150g" },
+        { "uz": "Mozzarella 80g", "ru": "Моцарелла 80г", "en": "Mozzarella 80g" },
+        { "uz": "Rayxon, sarimsoq", "ru": "Базилик, чеснок", "en": "Basil, garlic" }
+      ],
+      "recipe": {
+        "uz": "Sabzavotlarni qovuring, sous va lazanya varaqlari bilan qatlamlang. Pishloq seping va 180°C da 25 daqiqa pishiring.",
+        "ru": "Обжарьте овощи, уложите слоями с соусом и листами. Посыпьте сыром, запекайте 25 мин при 180°C.",
+        "en": "Sauté veggies, layer with sauce and pasta sheets. Top with cheese, bake at 180°C for 25 min."
+      },
+      "tips": {
+        "uz": "Vegetarian mushak oshirish uchun yaxshi variant.",
+        "ru": "Отличный вегетарианский вариант для набора массы.",
+        "en": "Great vegetarian option for muscle gain."
+      }
+    },
+    {
+      "id": "d9",
+      "emoji": "🍝",
+      "name": {
+        "uz": "Paneerli makaron",
+        "ru": "Паста с панир",
+        "en": "Paneer pasta"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 560,
+      "protein": 28,
+      "carbs": 65,
+      "fats": 20,
+      "ingredients": [
+        { "uz": "Butun donli makaron 90g", "ru": "Цельнозерновая паста 90г", "en": "Whole-grain pasta 90g" },
+        { "uz": "Paneer yoki tofu 120g", "ru": "Панир или тофу 120г", "en": "Paneer or tofu 120g" },
+        { "uz": "Ismaloq 50g", "ru": "Шпинат 50г", "en": "Spinach 50g" },
+        { "uz": "Smetana 50ml", "ru": "Сметана 50мл", "en": "Sour cream 50ml" },
+        { "uz": "Parmezan 20g", "ru": "Пармезан 20г", "en": "Parmesan 20g" }
+      ],
+      "recipe": {
+        "uz": "Makaronni qaynating. Paneerni kublab qovuring, ismaloq va smetana qo'shing. Makaron bilan aralashtiring.",
+        "ru": "Отварите пасту. Обжарьте панир кубиками, добавьте шпинат и сметану. Смешайте с пастой.",
+        "en": "Cook pasta. Sear paneer cubes, add spinach and sour cream. Mix with pasta."
+      },
+      "tips": {
+        "uz": "Vegetarian uchun oqsilga boy mushak ovqat.",
+        "ru": "Вегетарианское блюдо с высоким белком.",
+        "en": "High-protein vegetarian dinner."
+      }
+    },
+    {
+      "id": "d10",
+      "emoji": "💪",
+      "name": {
+        "uz": "Tvorog va yong'oq bombasi",
+        "ru": "Творожно-ореховая бомба",
+        "en": "Cottage cheese nut bowl"
+      },
+      "goals": ["gain", "maintain"],
+      "mealTimes": ["dinner", "breakfast"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": true,
+      "calories": 480,
+      "protein": 35,
+      "carbs": 30,
+      "fats": 22,
+      "ingredients": [
+        { "uz": "Tvorog 250g", "ru": "Творог 250г", "en": "Cottage cheese 250g" },
+        { "uz": "Yong'oq aralash 30g", "ru": "Микс орехов 30г", "en": "Mixed nuts 30g" },
+        { "uz": "Banan 1 dona", "ru": "Банан 1 шт", "en": "Banana 1 pc" },
+        { "uz": "Asal 1 osh qoshiq", "ru": "Мёд 1 ст.л", "en": "Honey 1 tbsp" },
+        { "uz": "Dolchin", "ru": "Корица", "en": "Cinnamon" }
+      ],
+      "recipe": {
+        "uz": "Tvorogni piyolaga soling, to'g'ralgan banan, yong'oq va asal qo'shing. Dolchin seping.",
+        "ru": "Выложите творог, добавьте банан, орехи и мёд. Посыпьте корицей.",
+        "en": "Place cottage cheese in a bowl, add banana, nuts and honey. Sprinkle cinnamon."
+      },
+      "tips": {
+        "uz": "Uyquda mushak tiklanishi uchun kazein oqsili.",
+        "ru": "Казеин — медленный белок для ночного восстановления.",
+        "en": "Casein — slow protein for overnight recovery."
+      }
+    },
+    {
+      "id": "d11",
+      "emoji": "🍛",
+      "name": {
+        "uz": "Qaynatilgan tovuq va guruch",
+        "ru": "Отварная курица с рисом",
+        "en": "Boiled chicken with rice"
+      },
+      "goals": ["lose", "maintain", "gain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 430,
+      "protein": 40,
+      "carbs": 50,
+      "fats": 6,
+      "ingredients": [
+        { "uz": "Tovuq ko'kragi 150g", "ru": "Куриная грудка 150г", "en": "Chicken breast 150g" },
+        { "uz": "Jigarrang guruch 80g", "ru": "Бурый рис 80г", "en": "Brown rice 80g" },
+        { "uz": "Brokkoli 80g", "ru": "Брокколи 80г", "en": "Broccoli 80g" },
+        { "uz": "Tuz, qalampir", "ru": "Соль, перец", "en": "Salt, pepper" },
+        { "uz": "Limon", "ru": "Лимон", "en": "Lemon" }
+      ],
+      "recipe": {
+        "uz": "Tovuqni qaynating va bo'laklang. Guruch va brokkolini alohida tayyorlang. Limon quying.",
+        "ru": "Отварите курицу и нарежьте. Отварите рис и брокколи. Сбрызните лимоном.",
+        "en": "Boil chicken and slice. Cook rice and broccoli. Drizzle with lemon."
+      },
+      "tips": {
+        "uz": "Klassik fitness ovqati — har qanday maqsad uchun mos.",
+        "ru": "Классика фитнес-питания — под любую цель.",
+        "en": "Classic fitness meal — fits any goal."
+      }
+    },
+    {
+      "id": "d12",
+      "emoji": "🌿",
+      "name": {
+        "uz": "Yong'oqli pesto makaron",
+        "ru": "Паста с ореховым песто",
+        "en": "Walnut pesto pasta"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["dinner"],
+      "ageGroups": ["teen", "young"],
+      "avoidDiseases": ["diabetes"],
+      "vegetarian": true,
+      "calories": 540,
+      "protein": 18,
+      "carbs": 62,
+      "fats": 24,
+      "ingredients": [
+        { "uz": "Makaron 90g", "ru": "Паста 90г", "en": "Pasta 90g" },
+        { "uz": "Yong'oq 30g", "ru": "Грецкий орех 30г", "en": "Walnuts 30g" },
+        { "uz": "Rayxon barglari", "ru": "Базилик", "en": "Basil leaves" },
+        { "uz": "Sarimsoq 2 tish", "ru": "Чеснок 2 зубчика", "en": "Garlic 2 cloves" },
+        { "uz": "Parmezan 25g", "ru": "Пармезан 25г", "en": "Parmesan 25g" }
+      ],
+      "recipe": {
+        "uz": "Makaronni qaynating. Yong'oq, rayxon, sarimsoq va pishloqni blenderda yanching — pesto. Makaron bilan aralashtiring.",
+        "ru": "Отварите пасту. Взбейте орехи, базилик, чеснок и сыр — песто. Смешайте с пастой.",
+        "en": "Cook pasta. Blend walnuts, basil, garlic and cheese into pesto. Toss with pasta."
+      },
+      "tips": {
+        "uz": "Omega-3 va foydali yog'larga boy.",
+        "ru": "Богат омега-3 и полезными жирами.",
+        "en": "Rich in omega-3 and healthy fats."
+      }
+    },
+    {
+      "id": "d13",
+      "emoji": "🍲",
+      "name": {
+        "uz": "Yengil go'shtli sho'rva",
+        "ru": "Лёгкий мясной суп",
+        "en": "Light meat broth"
+      },
+      "goals": ["maintain", "gain"],
+      "mealTimes": ["dinner", "lunch"],
+      "ageGroups": ["young", "senior"],
+      "avoidDiseases": [],
+      "vegetarian": false,
+      "calories": 360,
+      "protein": 28,
+      "carbs": 28,
+      "fats": 14,
+      "ingredients": [
+        { "uz": "Mol go'shti 120g", "ru": "Говядина 120г", "en": "Beef 120g" },
+        { "uz": "Kartoshka 1 dona", "ru": "Картофель 1 шт", "en": "Potato 1 pc" },
+        { "uz": "Sabzi 1 dona", "ru": "Морковь 1 шт", "en": "Carrot 1 pc" },
+        { "uz": "Piyoz ½ dona", "ru": "Лук ½", "en": "Onion ½" },
+        { "uz": "Jambil, lavr bargi", "ru": "Зелень, лавровый лист", "en": "Herbs, bay leaf" }
+      ],
+      "recipe": {
+        "uz": "Go'shtni qaynating, sabzavotlarni qo'shib 20 daqiqa pishiring. Ortiqcha yog'sizlantiring.",
+        "ru": "Отварите мясо, добавьте овощи, варите 20 мин. Снимите лишний жир.",
+        "en": "Boil meat, add veggies, simmer 20 min. Skim excess fat."
+      },
+      "tips": {
+        "uz": "Yumshoq, keksalar uchun hazm qilish oson.",
+        "ru": "Мягкое, легко усваивается пожилыми.",
+        "en": "Gentle, easy to digest for seniors."
+      }
+    }
+  ]
+}

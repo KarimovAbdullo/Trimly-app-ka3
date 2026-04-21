@@ -6,6 +6,7 @@ import dailyResultsReducer from "./slices/dailyResultsSlice";
 import foodReducer from "./slices/foodSlice";
 import profileReducer from "./slices/profileSlice";
 import stepSessionReducer from "./slices/stepSessionSlice";
+import trainingProgressReducer from "./slices/trainingProgressSlice";
 import waterReducer from "./slices/waterSlice";
 
 const rootReducer = combineReducers({
@@ -15,12 +16,21 @@ const rootReducer = combineReducers({
   food: foodReducer,
   profile: profileReducer,
   stepSession: stepSessionReducer,
+  trainingProgress: trainingProgressReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: ["app", "dailyResults", "water", "food", "profile", "stepSession"],
+  whitelist: [
+    "app",
+    "dailyResults",
+    "water",
+    "food",
+    "profile",
+    "stepSession",
+    "trainingProgress",
+  ],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
