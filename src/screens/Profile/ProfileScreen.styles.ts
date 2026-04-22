@@ -94,6 +94,7 @@ export const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 18,
     fontWeight: "700",
+    color: "#0F172A",
   },
 
   modalText: {
@@ -133,6 +134,7 @@ export const styles = StyleSheet.create({
 
   btnText: {
     fontWeight: "600",
+    color: "#0F172A",
   },
 
   btnTextWhite: {

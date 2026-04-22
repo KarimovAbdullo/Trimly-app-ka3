@@ -67,7 +67,7 @@ export function ProfileScreen() {
           <AppText style={styles.itemSubtitle}>{subtitle}</AppText>
         ) : null}
       </View>
-      <AppText>›</AppText>
+      <AppText color="#0F172A">›</AppText>
     </TouchableOpacity>
   );
 

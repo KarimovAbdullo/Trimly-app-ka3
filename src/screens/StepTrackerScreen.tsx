@@ -9,6 +9,7 @@ import {
   startPedometer,
   stopPedometer,
 } from "@/utils/pedometer";
+import { tryShowInterstitial } from "@/lib/ads";
 import { recordStepsForDate } from "@/store/slices/dailyResultsSlice";
 import {
   clearSession,
@@ -265,6 +266,7 @@ export default function StepTrackerScreen() {
   ]);
 
   const handleStop = async () => {
+    const stepsAtStop = totalStepsRef.current;
     stopPedometer(pedometerSubRef.current);
     pedometerSubRef.current = null;
     dispatch(clearSession(undefined as any));
@@ -272,12 +274,19 @@ export default function StepTrackerScreen() {
     setTotalSteps(0);
     setIsRunning(false);
     setErrorText("");
+
+    if (stepsAtStop >= 100) {
+      setTimeout(() => {
+        void tryShowInterstitial();
+      }, 800);
+    }
   };
 
   const handleOpenSettings = useCallback(async () => {
     setErrorText("");
-    const opened = await Linking.openSettings();
-    if (!opened) {
+    try {
+      await Linking.openSettings();
+    } catch {
       setErrorText(t("stepTraining.unableOpenSettings"));
     }
   }, [t]);

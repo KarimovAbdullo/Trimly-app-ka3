@@ -17,6 +17,7 @@ import { LanguageModalProvider } from "@/contexts/LanguageModalContext";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import "@/i18n";
 import { loadSavedLanguage } from "@/i18n";
+import { initAdMob, preloadInterstitial, preloadRewarded } from "@/lib/ads";
 import { AppProviders } from "@/store/providers";
 
 if (__DEV__) {
@@ -56,6 +57,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     void loadSavedLanguage();
+  }, []);
+
+  useEffect(() => {
+    void initAdMob().then(() => {
+      preloadInterstitial();
+      preloadRewarded();
+    });
   }, []);
 
   if (!fontsLoaded) {

@@ -46,6 +46,13 @@
       ],
       "expo-router",
       [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-4216862763820451~7049873121",
+          "iosAppId": "ca-app-pub-4216862763820451~7049873121"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/icon.png",

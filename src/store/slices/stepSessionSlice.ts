@@ -7,21 +7,30 @@ const initialState: StepSessionState = null;
 
 const stepSessionSlice = createSlice({
   name: "stepSession",
-  initialState,
+  initialState: initialState as StepSessionState,
   reducers: {
-    hydrateStepSessionFromLegacy(_state, action: PayloadAction<StepSession>) {
+    hydrateStepSessionFromLegacy(
+      _state,
+      action: PayloadAction<StepSession>,
+    ): StepSessionState {
       return action.payload;
     },
-    startSession(state, action: PayloadAction<{ startTimeISO: string }>) {
+    startSession(
+      _state,
+      action: PayloadAction<{ startTimeISO: string }>,
+    ): StepSessionState {
       return { startTimeISO: action.payload.startTimeISO, lastTotalSteps: 0 };
     },
-    updateSessionSteps(state, action: PayloadAction<number>) {
+    updateSessionSteps(
+      state,
+      action: PayloadAction<number>,
+    ): StepSessionState {
       if (!state) return state;
       const next = Math.max(0, Math.floor(action.payload));
       return { ...state, lastTotalSteps: next };
     },
-    clearSession(_state, _action: PayloadAction<void>) {
-      return initialState;
+    clearSession(_state, _action: PayloadAction<void>): StepSessionState {
+      return null;
     },
   },
 });
