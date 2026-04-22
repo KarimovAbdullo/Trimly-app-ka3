@@ -11,9 +11,11 @@ import {
   startingReps,
   todayTargetReps,
 } from "@/utils/trainingProgression";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
+
+import { showRewarded } from "@/lib/ads";
 
 export default function TraningScreen() {
   const { t } = useTranslation();
@@ -21,6 +23,26 @@ export default function TraningScreen() {
   const trainingProgress = useAppSelector((s) => s.trainingProgress);
   const [activeExercise, setActiveExercise] =
     useState<TrainingExerciseDef | null>(null);
+  const playCountRef = useRef(0);
+
+  const handleSelectExercise = useCallback(
+    (exercise: TrainingExerciseDef) => {
+      playCountRef.current += 1;
+      const shouldShowAd = playCountRef.current % 2 === 1;
+      if (shouldShowAd) {
+        void showRewarded(() => {
+          setActiveExercise(exercise);
+        }).then((shown) => {
+          if (!shown) {
+            setActiveExercise(exercise);
+          }
+        });
+      } else {
+        setActiveExercise(exercise);
+      }
+    },
+    [],
+  );
 
   const progressionInputs = useMemo(
     () => ({
@@ -87,7 +109,7 @@ export default function TraningScreen() {
           onClose={handleCloseSession}
         />
       ) : (
-        <TrainingExercisePicker exercises={exercises} onSelect={setActiveExercise} />
+        <TrainingExercisePicker exercises={exercises} onSelect={handleSelectExercise} />
       )}
     </View>
   );

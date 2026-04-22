@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { tryShowInterstitial } from "@/lib/ads";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { refreshDailyFood, setTodayFoodItems } from "@/store/slices/foodSlice";
 import type { FoodHistoryItem, FoodItemLog } from "@/utils/foodStorage";
@@ -105,6 +106,13 @@ export default function FoodScreen() {
     () => selectedFoods.reduce((sum, x) => sum + x.item.calories * x.qty, 0),
     [selectedFoods],
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      void tryShowInterstitial();
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   const didRestoreRef = useRef(false);
   useEffect(() => {

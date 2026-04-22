@@ -1,5 +1,6 @@
 import { AppText } from "@/components/AppText";
 import { setAppLanguage } from "@/i18n";
+import { showRewarded } from "@/lib/ads";
 import { useTranslation } from "react-i18next";
 import React, { createContext, useContext, useMemo, useState } from "react";
 import { Modal, TouchableOpacity, View } from "react-native";
@@ -30,8 +31,20 @@ export function LanguageModalProvider({
   );
 
   const onSelect = async (lang: "en" | "ru" | "uz") => {
-    await setAppLanguage(lang);
+    if (lang === i18n.language) {
+      setVisible(false);
+      return;
+    }
     setVisible(false);
+    const apply = async () => {
+      await setAppLanguage(lang);
+    };
+    const shown = await showRewarded(() => {
+      void apply();
+    });
+    if (!shown) {
+      await apply();
+    }
   };
 
   const Option = ({

@@ -220,7 +220,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     left: 18,
     right: 18,
-    bottom: 18,
+    bottom: 60,
     alignItems: "center",
     gap: 12,
   },
