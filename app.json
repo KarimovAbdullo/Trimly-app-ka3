@@ -10,12 +10,20 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.karimova008.healthApp"
+      "bundleIdentifier": "com.karimova008.healthApp",
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) mashq va poza tahlili uchun kameradan foydalanadi.",
+        "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) video yozish uchun mikrofondan foydalanadi."
+      }
     },
     "android": {
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.karimova008.healthApp"
+      "package": "com.karimova008.healthApp",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -34,7 +42,9 @@
       [
         "./plugins/withMediapipeModelAssets.js",
         {
-          "assetsPaths": ["./assets/models/"]
+          "assetsPaths": [
+            "./assets/models/"
+          ]
         }
       ],
       [
@@ -65,6 +75,16 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "expo-navigation-bar": {
+        "visibility": "hidden",
+        "behavior": "overlay-swipe"
+      },
+      "router": {},
+      "eas": {
+        "projectId": "18e6ceb3-bd03-42d5-add0-ed42eae80a2a"
+      }
     }
   }
 }
