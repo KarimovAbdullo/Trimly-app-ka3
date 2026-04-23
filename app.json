@@ -41,7 +41,7 @@
             "ndkVersion": "27.1.12297006",
             "enableProguardInReleaseBuilds": true,
             "enableShrinkResourcesInReleaseBuilds": true,
-            "extraProguardRules": "-keep class com.google.mediapipe.** { *; }\n-keep class com.google.ads.** { *; }\n-keep class com.google.android.gms.ads.** { *; }\n-keep class com.facebook.react.** { *; }\n-keep class com.swmansion.** { *; }\n-keep class com.mrousavy.camera.** { *; }\n-keep class com.worklets.** { *; }",
+            "extraProguardRules": "-keep class com.google.mediapipe.** { *; }\n-keep class com.google.ads.** { *; }\n-keep class com.google.android.gms.ads.** { *; }\n-keep class com.facebook.react.** { *; }\n-keep class com.swmansion.** { *; }\n-keep class com.mrousavy.camera.** { *; }\n-keep class com.worklets.** { *; }\n-dontwarn com.google.mediapipe.**\n-dontwarn com.google.mediapipe.proto.**\n-dontwarn javax.lang.model.**\n-dontwarn autovalue.shaded.**\n-dontwarn com.google.auto.value.**\n-dontwarn com.google.errorprone.**\n-dontwarn org.checkerframework.**\n-dontwarn com.google.j2objc.annotations.**",
             "packagingOptions": {
               "jniLibs": {
                 "useLegacyPackaging": false
