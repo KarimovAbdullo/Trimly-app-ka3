@@ -5,29 +5,21 @@ import { Animated, StyleSheet, View } from "react-native";
 
 type ProgressBarProps = {
   progressAnim: Animated.Value;
-  currentMeters: number;
-  goalMeters: number;
   percent: number;
-  /** When set (e.g. while tracking), show live step count under the distance readout. */
+  /** When set (e.g. while tracking), show live step count under the line. */
   liveSteps?: number;
-  formatCurrentMeters?: (meters: number) => string;
 };
 
 export function ProgressBar({
   progressAnim,
-  currentMeters,
-  goalMeters,
   percent,
   liveSteps,
-  formatCurrentMeters = (m) => `${Math.round(m)} m`,
 }: ProgressBarProps) {
   const { t } = useTranslation();
   const widthInterpolate = progressAnim.interpolate({
     inputRange: [0, 1],
     outputRange: ["0%", "100%"],
   });
-
-  const remainingMeters = Math.max(0, goalMeters - currentMeters);
 
   return (
     <View style={styles.card}>
@@ -50,30 +42,6 @@ export function ProgressBar({
           />
         </Animated.View>
         <Animated.View style={[styles.glow, { width: widthInterpolate }]} />
-      </View>
-
-      <View style={styles.valuesRow}>
-        <AppText size={30} weight="bold" color="#FACC15">
-          {formatCurrentMeters(currentMeters)}
-        </AppText>
-        <AppText size={30} weight="semibold" color="#94A3B8">
-          {goalMeters.toLocaleString()} m
-        </AppText>
-      </View>
-
-      <View style={styles.detailRow}>
-        <AppText size={13} color="#94A3B8">
-          {t("stepTraining.walked")}:{" "}
-          <AppText size={13} weight="semibold" color="#E2E8F0">
-            {formatCurrentMeters(currentMeters)}
-          </AppText>
-        </AppText>
-        <AppText size={13} color="#94A3B8">
-          {t("stepTraining.remaining")}:{" "}
-          <AppText size={13} weight="semibold" color="#E2E8F0">
-            {formatCurrentMeters(remainingMeters)}
-          </AppText>
-        </AppText>
       </View>
 
       {typeof liveSteps === "number" ? (
@@ -136,20 +104,8 @@ const styles = StyleSheet.create({
     shadowRadius: 20,
     elevation: 15,
   },
-  valuesRow: {
-    marginTop: 8,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  detailRow: {
-    marginTop: 6,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   stepsLine: {
-    marginTop: 8,
+    marginTop: 10,
     lineHeight: 20,
   },
 });

@@ -10,9 +10,12 @@ export async function checkPedometerCapability(): Promise<PedometerCapability> {
   const available = await Pedometer.isAvailableAsync();
   if (!available) return { available: false, granted: false };
 
+  const existing = await Pedometer.getPermissionsAsync();
+  if (existing.status === "granted") return { available: true, granted: true };
+  if (!existing.canAskAgain) return { available: true, granted: false };
+
   const perm = await Pedometer.requestPermissionsAsync();
-  const granted = perm.status === "granted";
-  return { available: true, granted };
+  return { available: true, granted: perm.status === "granted" };
 }
 
 export async function startPedometer(

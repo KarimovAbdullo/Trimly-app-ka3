@@ -2,7 +2,7 @@ import BackIcon2 from "@/assets/icons/BackIcon2";
 import { AppText } from "@/components/AppText";
 import { ProgressBar } from "@/components/ProgressBar";
 import { Image } from "expo-image";
-import { calculateDistance, formatDistanceMetersLive } from "@/utils/distance";
+import { calculateDistance } from "@/utils/distance";
 import {
   checkPedometerCapability,
   getStepsBetweenDates,
@@ -48,6 +48,9 @@ export default function StepTrackerScreen() {
   const totalStepsRef = useRef(0);
   const isRunningRef = useRef(false);
   const startTimeRef = useRef<Date | null>(null);
+  const permissionGrantedRef = useRef(true);
+  const deviceSupportedRef = useRef(true);
+  const initialStepSessionRef = useRef(stepSession);
   const progressAnim = useRef(new Animated.Value(0)).current;
   const pulseAnim1 = useRef(new Animated.Value(0)).current;
 
@@ -79,6 +82,15 @@ export default function StepTrackerScreen() {
   useEffect(() => {
     startTimeRef.current = startTime;
   }, [startTime]);
+  useEffect(() => {
+    permissionGrantedRef.current = permissionGranted;
+  }, [permissionGranted]);
+  useEffect(() => {
+    deviceSupportedRef.current = deviceSupported;
+  }, [deviceSupported]);
+  useEffect(() => {
+    setHeightCm(profile?.heightCm);
+  }, [profile?.heightCm]);
 
   useEffect(() => {
     if (!isRunning || !startTime) return;
@@ -135,45 +147,48 @@ export default function StepTrackerScreen() {
     });
   }, []);
 
-  const restoreSession = useCallback(async () => {
-    setHeightCm(profile?.heightCm);
-
-    const capability = await checkPedometerCapability();
-    setDeviceSupported(capability.available);
-    setPermissionGranted(capability.granted);
-
-    if (!capability.available || !capability.granted) {
-      setIsReady(true);
-      return;
-    }
-
-    if (!stepSession) {
-      setIsRunning(false);
-      setStartTime(null);
-      setTotalSteps(0);
-      setIsReady(true);
-      return;
-    }
-
-    const savedStart = new Date(stepSession.startTimeISO);
-    const steps =
-      Platform.OS === "android"
-        ? (stepSession.lastTotalSteps ?? 0)
-        : await getStepsBetweenDates(savedStart, new Date());
-    setStartTime(savedStart);
-    setTotalSteps(steps);
-    setIsRunning(true);
-    await attachLiveWatcher(steps);
-    setIsReady(true);
-  }, [attachLiveWatcher, profile?.heightCm, stepSession]);
-
   useEffect(() => {
-    void restoreSession();
+    let cancelled = false;
+    (async () => {
+      const saved = initialStepSessionRef.current;
+      const capability = await checkPedometerCapability();
+      if (cancelled) return;
+      setDeviceSupported(capability.available);
+      setPermissionGranted(capability.granted);
+
+      if (!capability.available || !capability.granted) {
+        setIsReady(true);
+        return;
+      }
+
+      if (!saved) {
+        setIsRunning(false);
+        setStartTime(null);
+        setTotalSteps(0);
+        setIsReady(true);
+        return;
+      }
+
+      const savedStart = new Date(saved.startTimeISO);
+      const steps =
+        Platform.OS === "android"
+          ? (saved.lastTotalSteps ?? 0)
+          : await getStepsBetweenDates(savedStart, new Date());
+      if (cancelled) return;
+      setStartTime(savedStart);
+      setTotalSteps(steps);
+      setIsRunning(true);
+      await attachLiveWatcher(steps);
+      if (cancelled) return;
+      setIsReady(true);
+    })();
     return () => {
+      cancelled = true;
       stopPedometer(pedometerSubRef.current);
       pedometerSubRef.current = null;
     };
-  }, [restoreSession]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const sub = AppState.addEventListener(
@@ -189,13 +204,13 @@ export default function StepTrackerScreen() {
           return;
         }
 
-        // When user returns from Settings, re-check permission/device capability.
-        const capability = await checkPedometerCapability();
-        setDeviceSupported(capability.available);
-        setPermissionGranted(capability.granted);
-
-        if (!capability.available || !capability.granted) {
-          return;
+        // Only re-check native permission if we don't already have it —
+        // re-checking every resume adds bridge latency and causes UI jank.
+        if (!permissionGrantedRef.current || !deviceSupportedRef.current) {
+          const capability = await checkPedometerCapability();
+          setDeviceSupported(capability.available);
+          setPermissionGranted(capability.granted);
+          if (!capability.available || !capability.granted) return;
         }
 
         if (!isRunningRef.current || !startTimeRef.current) {
@@ -212,7 +227,7 @@ export default function StepTrackerScreen() {
       },
     );
     return () => sub.remove();
-  }, [attachLiveWatcher]);
+  }, [attachLiveWatcher, dispatch]);
 
   const beginTracking = useCallback(async () => {
     const start = new Date();
@@ -225,7 +240,6 @@ export default function StepTrackerScreen() {
 
   const handleStart = useCallback(async () => {
     setErrorText("");
-    setHeightCm(profile?.heightCm);
 
     // Skip redundant native permission re-check when mount already verified it.
     // Re-checking adds bridge latency and makes the Start tap feel laggy.
@@ -256,14 +270,7 @@ export default function StepTrackerScreen() {
       ],
       { cancelable: true },
     );
-  }, [
-    beginTracking,
-    deviceSupported,
-    isReady,
-    permissionGranted,
-    profile?.heightCm,
-    t,
-  ]);
+  }, [beginTracking, deviceSupported, isReady, permissionGranted, t]);
 
   const handleStop = async () => {
     const stepsAtStop = totalStepsRef.current;
@@ -367,11 +374,8 @@ export default function StepTrackerScreen() {
         <View style={styles.content}>
           <ProgressBar
             progressAnim={progressAnim}
-            currentMeters={distanceMeters}
-            goalMeters={GOAL_METERS}
             percent={percent}
             liveSteps={isRunning ? totalSteps : undefined}
-            formatCurrentMeters={formatDistanceMetersLive}
           />
           {!isReady ? (
             <AppText size={14} color="#CBD5E1" style={styles.note}>
