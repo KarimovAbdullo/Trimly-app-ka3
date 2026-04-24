@@ -3,12 +3,14 @@ import {
   type TrainingExerciseDef,
 } from "@/constants/trainingExercises";
 import { useAppSelector } from "@/store/hooks";
+import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { TrainingExerciseCard } from "./TrainingExerciseCard";
-import { useMemo } from "react";
+import { InfoImageModal } from "@/components/InfoImageModal";
+import { useMemo, useState } from "react";
 
 type Props = {
   onSelect: (exercise: TrainingExerciseDef) => void;
@@ -20,6 +22,7 @@ export function TrainingExercisePicker({
   exercises = TRAINING_EXERCISES,
 }: Props) {
   const { t } = useTranslation();
+  const [infoVisible, setInfoVisible] = useState(false);
   const usageStartDate = useAppSelector((s) => s.dailyResults.usageStartDate);
   const fitnessByExercise = useAppSelector(
     (s) => s.dailyResults.fitnessRepsByDateByExercise ?? {},
@@ -48,7 +51,20 @@ export function TrainingExercisePicker({
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.heading}>{t("training.dailyExercises")}</Text>
+        <View style={styles.headerRow}>
+          <Text style={styles.heading}>{t("training.dailyExercises")}</Text>
+          <Pressable
+            onPress={() => setInfoVisible(true)}
+            style={styles.infoBtn}
+            hitSlop={10}
+          >
+            <Ionicons
+              name="information-circle-outline"
+              size={28}
+              color="#FACC15"
+            />
+          </Pressable>
+        </View>
         <Text style={styles.subheading}>
           {t("training.dailyExercisesDesc")}
         </Text>
@@ -71,6 +87,12 @@ export function TrainingExercisePicker({
         })}
         <View style={{ height: 24 }} />
       </ScrollView>
+
+      <InfoImageModal
+        visible={infoVisible}
+        onClose={() => setInfoVisible(false)}
+        source={require("@/assets/images/infoImage.jpg")}
+      />
     </LinearGradient>
   );
 }
@@ -81,14 +103,30 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingBottom: 32,
   },
-  heading: {
-    marginHorizontal: 22,
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "space-between",
+    paddingHorizontal: 22,
     paddingTop: 30,
-    marginTop: 0,
+    paddingRight: 18,
+  },
+  heading: {
+    flex: 1,
     fontSize: 32,
     fontWeight: "900",
     color: "#f8fafc",
     letterSpacing: -0.5,
+  },
+  infoBtn: {
+    marginLeft: 12,
+    marginBottom: 4,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(250,204,21,0.12)",
   },
   subheading: {
     marginHorizontal: 22,
