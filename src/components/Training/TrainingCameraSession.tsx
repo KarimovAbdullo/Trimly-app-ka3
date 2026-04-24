@@ -81,6 +81,7 @@ export function TrainingCameraSession({ exercise, onClose }: Props) {
   const [repCount, setRepCount] = useState(0);
   const [repComplete, setRepComplete] = useState(false);
   const [didRequestPermission, setDidRequestPermission] = useState(false);
+  const [detectionError, setDetectionError] = useState<string | null>(null);
   const autoClosedRef = useRef(false);
 
   const targetReps = exercise.targetReps;
@@ -156,6 +157,7 @@ export function TrainingCameraSession({ exercise, onClose }: Props) {
 
   const onError = useCallback((err: DetectionError) => {
     console.warn("Pose detection:", err.message);
+    setDetectionError(err.message ?? "unknown");
   }, []);
 
   const handleClose = useCallback(() => {
@@ -191,7 +193,7 @@ export function TrainingCameraSession({ exercise, onClose }: Props) {
     RunningMode.LIVE_STREAM,
     POSE_MODEL,
     {
-      delegate: Delegate.GPU,
+      delegate: Delegate.CPU,
       numPoses: 1,
       minPoseDetectionConfidence: 0.5,
       minPosePresenceConfidence: 0.5,
@@ -277,6 +279,9 @@ export function TrainingCameraSession({ exercise, onClose }: Props) {
                 ) : (
                   <Text style={styles.hudHint}>{exercise.hint}</Text>
                 )}
+                {detectionError ? (
+                  <Text style={styles.hudError}>⚠ {detectionError}</Text>
+                ) : null}
                 <Pressable
                   style={styles.resetBtn}
                   onPress={resetSession}
@@ -374,6 +379,12 @@ const styles = StyleSheet.create({
     color: "#cbd5e1",
     fontSize: 13,
     lineHeight: 18,
+  },
+  hudError: {
+    marginTop: 8,
+    color: "#f87171",
+    fontSize: 12,
+    lineHeight: 16,
   },
   resetBtn: {
     alignSelf: "flex-start",
