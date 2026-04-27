@@ -1,6 +1,7 @@
 import { AdEventType, InterstitialAd } from "react-native-google-mobile-ads";
 
 import { AD_FREQUENCY, AD_UNIT_IDS } from "./config";
+import { shouldRequestNonPersonalizedAdsOnly } from "./init";
 
 let ad: InterstitialAd | null = null;
 let isLoaded = false;
@@ -19,7 +20,7 @@ function cleanupListeners() {
 function createAndLoad() {
   cleanupListeners();
   ad = InterstitialAd.createForAdRequest(AD_UNIT_IDS.interstitial, {
-    requestNonPersonalizedAdsOnly: false,
+    requestNonPersonalizedAdsOnly: shouldRequestNonPersonalizedAdsOnly(),
   });
   isLoaded = false;
 

@@ -5,6 +5,7 @@ import {
 } from "react-native-google-mobile-ads";
 
 import { AD_UNIT_IDS } from "./config";
+import { shouldRequestNonPersonalizedAdsOnly } from "./init";
 
 let ad: RewardedAd | null = null;
 let isLoaded = false;
@@ -22,7 +23,7 @@ function cleanupListeners() {
 function createAndLoad() {
   cleanupListeners();
   ad = RewardedAd.createForAdRequest(AD_UNIT_IDS.rewarded, {
-    requestNonPersonalizedAdsOnly: false,
+    requestNonPersonalizedAdsOnly: shouldRequestNonPersonalizedAdsOnly(),
   });
   isLoaded = false;
 

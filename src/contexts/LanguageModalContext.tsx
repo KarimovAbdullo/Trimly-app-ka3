@@ -1,8 +1,7 @@
 import { AppText } from "@/components/AppText";
 import { setAppLanguage } from "@/i18n";
-import { showRewarded } from "@/lib/ads";
-import { useTranslation } from "react-i18next";
 import React, { createContext, useContext, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Modal, TouchableOpacity, View } from "react-native";
 
 type LanguageModalContextType = {
@@ -10,9 +9,9 @@ type LanguageModalContextType = {
   closeLanguageModal: () => void;
 };
 
-const LanguageModalContext = createContext<LanguageModalContextType | undefined>(
-  undefined,
-);
+const LanguageModalContext = createContext<
+  LanguageModalContextType | undefined
+>(undefined);
 
 export function LanguageModalProvider({
   children,
@@ -36,15 +35,7 @@ export function LanguageModalProvider({
       return;
     }
     setVisible(false);
-    const apply = async () => {
-      await setAppLanguage(lang);
-    };
-    const shown = await showRewarded(() => {
-      void apply();
-    });
-    if (!shown) {
-      await apply();
-    }
+    await setAppLanguage(lang);
   };
 
   const Option = ({
@@ -63,9 +54,13 @@ export function LanguageModalProvider({
         borderRadius: 12,
         borderWidth: 1,
         borderColor:
-          i18n.language === lang ? "rgba(124,58,237,0.8)" : "rgba(148,163,184,0.45)",
+          i18n.language === lang
+            ? "rgba(124,58,237,0.8)"
+            : "rgba(148,163,184,0.45)",
         backgroundColor:
-          i18n.language === lang ? "rgba(124,58,237,0.16)" : "rgba(255,255,255,0.04)",
+          i18n.language === lang
+            ? "rgba(124,58,237,0.16)"
+            : "rgba(255,255,255,0.04)",
         marginTop: 8,
       }}
     >
@@ -140,8 +135,9 @@ export function LanguageModalProvider({
 export function useLanguageModal() {
   const ctx = useContext(LanguageModalContext);
   if (!ctx) {
-    throw new Error("useLanguageModal must be used inside LanguageModalProvider");
+    throw new Error(
+      "useLanguageModal must be used inside LanguageModalProvider",
+    );
   }
   return ctx;
 }
-

@@ -10,7 +10,11 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "build:android": "eas build -p android --profile production --non-interactive",
-    "build:android:clean": "eas build -p android --profile production --non-interactive --clear-cache"
+    "build:android:clean": "eas build -p android --profile production --non-interactive --clear-cache",
+    "android:release:apk": "cd android && gradlew.bat assembleRelease",
+    "android:release:aab": "cd android && gradlew.bat bundleRelease",
+    "android:release:clean": "cd android && gradlew.bat clean",
+    "android:release:all": "npm run android:release:apk && npm run android:release:aab"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.1.1",

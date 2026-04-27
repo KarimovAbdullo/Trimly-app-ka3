@@ -36,6 +36,7 @@ export const resources = {
         gender: "Gender",
         changeLanguage: "Change Language",
         contactSupport: "Contact Support",
+        privacyPolicy: "Privacy Policy",
         supportSubtitle: "Remove ads, donate and others",
         removeAds: "Remove Ads (advertising)",
         supportModalTitle: "Contact admin",
@@ -63,7 +64,8 @@ export const resources = {
       },
       mealPlan: {
         screenTitle: "Generate Meal Plan",
-        screenIntro: "Answer a few questions and we'll pick the best meal for you.",
+        screenIntro:
+          "Answer a few questions and we'll pick the best meal for you.",
         goalLabel: "Goal",
         goalPlaceholder: "Select your goal",
         goalLose: "Lose weight",
@@ -91,7 +93,9 @@ export const resources = {
         vegetarianLabel: "Vegetarian",
         vegetarianHint: "Show only vegetarian meals",
         generate: "Generate plan",
+        generateWatchAd: "Generate (watch ad)",
         bonusGenerate: "🎁  Bonus meal (watch ad)",
+        adRequired: "Please watch the ad to generate a plan.",
         missingFields: "Please fill in all fields.",
         noMatch: "No matching meal found. Try different options.",
         resultTitle: "Your meal",
@@ -145,6 +149,12 @@ export const resources = {
         left: "left",
         streak: "Streak",
         untilNextBonus: "sessions until +1 rep",
+        unlock: {
+          title: "Exercise is locked",
+          message: "To start this exercise, watch an ad.",
+          watchAd: "Watch ad",
+          badge: "Unlock with ad",
+        },
         exercises: {
           squat: "Squat",
           crunch: "Crunch",
@@ -152,19 +162,24 @@ export const resources = {
           set1: "Set 1",
           set2: "Set 2",
           set3: "Set 3",
-          hintSquat: "Keep your full body visible. Go down deep, then stand up fully.",
-          hintPress: "Lie on your side and lift your torso slightly up, then lower down.",
-          hintPushup: "Keep your body straight. Lower your chest, then push back up fully.",
+          hintSquat:
+            "Keep your full body visible. Go down deep, then stand up fully.",
+          hintPress:
+            "Lie on your side and lift your torso slightly up, then lower down.",
+          hintPushup:
+            "Keep your body straight. Lower your chest, then push back up fully.",
         },
       },
       stepTraining: {
         pedometerUnavailable: "Pedometer is not available on this device.",
         pedometerPermissionRequired: "Pedometer permission is required.",
-        unableOpenSettings: "Unable to open app settings. Please open it manually.",
+        unableOpenSettings:
+          "Unable to open app settings. Please open it manually.",
         goal: "Goal",
         loading: "Loading...",
         deviceUnsupported: "This device does not support pedometer.",
-        allowMotionPermission: "Allow motion/fitness permission to use step tracking.",
+        allowMotionPermission:
+          "Allow motion/fitness permission to use step tracking.",
         distanceHint:
           "Distance is calculated from phone-counted full steps - usually each step is about 0.6-0.8 m. First update appears as soon as walking starts and steps are recognized (not GPS).",
         pressStart: "Press START to begin",
@@ -234,11 +249,11 @@ export const resources = {
         gender: "Пол",
         changeLanguage: "Сменить язык",
         contactSupport: "Связаться с поддержкой",
+        privacyPolicy: "Политика конфиденциальности",
         supportSubtitle: "Remove ads, donate and others",
         removeAds: "Убрать рекламу",
         supportModalTitle: "Связаться с админом",
-        supportModalMessage:
-          "По предложениям и вопросам свяжитесь с админом.",
+        supportModalMessage: "По предложениям и вопросам свяжитесь с админом.",
         clearProfile: "Очистить профиль",
         confirm: "Подтверждение",
         deleteAllData: "Все данные будут удалены.",
@@ -261,7 +276,8 @@ export const resources = {
       },
       mealPlan: {
         screenTitle: "Сгенерировать план питания",
-        screenIntro: "Ответьте на несколько вопросов и мы подберём лучшее блюдо.",
+        screenIntro:
+          "Ответьте на несколько вопросов и мы подберём лучшее блюдо.",
         goalLabel: "Цель",
         goalPlaceholder: "Выберите цель",
         goalLose: "Похудеть",
@@ -289,7 +305,9 @@ export const resources = {
         vegetarianLabel: "Вегетарианец",
         vegetarianHint: "Только вегетарианские блюда",
         generate: "Сгенерировать",
+        generateWatchAd: "Сгенерировать (смотреть рекламу)",
         bonusGenerate: "🎁  Бонусное блюдо (за рекламу)",
+        adRequired: "Чтобы сгенерировать план, сначала посмотрите рекламу.",
         missingFields: "Пожалуйста, заполните все поля.",
         noMatch: "Подходящее блюдо не найдено. Попробуйте другие опции.",
         resultTitle: "Ваше блюдо",
@@ -334,7 +352,8 @@ export const resources = {
       training: {
         reps: "повт.",
         dailyExercises: "Ежедневные упражнения",
-        dailyExercisesDesc: "Это упражнения, которые нужно выполнять каждый день.",
+        dailyExercisesDesc:
+          "Это упражнения, которые нужно выполнять каждый день.",
         target: "Цель",
         today: "Сегодня",
         lastRep: "Последний повтор",
@@ -343,6 +362,12 @@ export const resources = {
         untilNextBonus: "сессий до +1 повт.",
         doneLeft: "сделано",
         left: "осталось",
+        unlock: {
+          title: "Упражнение заблокировано",
+          message: "Чтобы выполнить это упражнение, посмотрите рекламу.",
+          watchAd: "Смотреть рекламу",
+          badge: "Разблокировать за рекламу",
+        },
         exercises: {
           squat: "Присед",
           crunch: "Скручивание",
@@ -437,6 +462,7 @@ export const resources = {
         gender: "Jins",
         changeLanguage: "Tilni o'zgartirish",
         contactSupport: "Yordam bilan bog'lanish",
+        privacyPolicy: "Maxfiylik siyosati",
         supportSubtitle: "Remove ads, donate and others",
         removeAds: "Reklamani olib tashlash",
         supportModalTitle: "Admin bilan bog'laning",
@@ -464,7 +490,8 @@ export const resources = {
       },
       mealPlan: {
         screenTitle: "Ovqat rejasini yaratish",
-        screenIntro: "Bir nechta savolga javob bering, biz sizga eng mos ovqatni tanlaymiz.",
+        screenIntro:
+          "Bir nechta savolga javob bering, biz sizga eng mos ovqatni tanlaymiz.",
         goalLabel: "Maqsad",
         goalPlaceholder: "Maqsadni tanlang",
         goalLose: "Ozish",
@@ -492,7 +519,9 @@ export const resources = {
         vegetarianLabel: "Vegetarian",
         vegetarianHint: "Faqat vegetarian ovqatlar",
         generate: "Rejani yaratish",
+        generateWatchAd: "Yaratish (reklama ko'rish)",
         bonusGenerate: "🎁  Bonus ovqat (reklama ko'ring)",
+        adRequired: "Reja yaratish uchun avval reklamani ko'ring.",
         missingFields: "Iltimos, barcha maydonlarni to'ldiring.",
         noMatch: "Mos ovqat topilmadi. Boshqa variantlarni sinab ko'ring.",
         resultTitle: "Sizning ovqatingiz",
@@ -537,7 +566,8 @@ export const resources = {
       training: {
         reps: "marta",
         dailyExercises: "Kunlik mashqlar",
-        dailyExercisesDesc: "Bular har kuni bajarishingiz kerak bo'lgan mashqlar.",
+        dailyExercisesDesc:
+          "Bular har kuni bajarishingiz kerak bo'lgan mashqlar.",
         target: "Maqsad",
         today: "Bugun",
         lastRep: "Oxirgi takror",
@@ -546,6 +576,12 @@ export const resources = {
         untilNextBonus: "sessiyadan keyin +1 rep",
         doneLeft: "bajarildi",
         left: "qoldi",
+        unlock: {
+          title: "Mashq bloklangan",
+          message: "Bu mashqni bajarish uchun reklama ko'ring.",
+          watchAd: "Reklama ko'rish",
+          badge: "Reklama bilan ochish",
+        },
         exercises: {
           squat: "O'tirib turish",
           crunch: "Press",
@@ -604,4 +640,3 @@ export const resources = {
     },
   },
 } as const;
-

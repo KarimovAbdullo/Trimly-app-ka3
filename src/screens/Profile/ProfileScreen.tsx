@@ -1,5 +1,6 @@
 import { AppText } from "@/components/AppText";
 import { useLanguageModal } from "@/contexts/LanguageModalContext";
+import { tryShowInterstitial } from "@/lib/ads";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { clearDailyResults } from "@/store/slices/dailyResultsSlice";
 import { clearFoodTracking } from "@/store/slices/foodSlice";
@@ -9,15 +10,24 @@ import { clearTrainingProgress } from "@/store/slices/trainingProgressSlice";
 import { clearWaterTracking } from "@/store/slices/waterSlice";
 import { persistor } from "@/store/store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Linking, Modal, ScrollView, TouchableOpacity, View } from "react-native";
+import {
+  Linking,
+  Modal,
+  ScrollView,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./ProfileScreen.styles";
 
 const SUPPORT_EMAIL = "6510206@mail.ru";
 const SUPPORT_WHATSAPP_PHONE = "998936510206";
+const PRIVACY_POLICY_URL =
+  "https://docs.google.com/document/d/e/2PACX-1vS0yVYJrK-dswJldwORlfvCn4C9u6XR3sKWq3ya5MUMPa-0MmogS6Y25fcE3GMpYVfiOI-jSJ3b2MRD/pub";
 
 export function ProfileScreen() {
   const { t } = useTranslation();
@@ -28,6 +38,12 @@ export function ProfileScreen() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
 
+  useFocusEffect(
+    useCallback(() => {
+      void tryShowInterstitial();
+    }, []),
+  );
+
   const openEmail = () => {
     setShowSupport(false);
     void Linking.openURL(`mailto:${SUPPORT_EMAIL}`);
@@ -36,6 +52,10 @@ export function ProfileScreen() {
   const openWhatsApp = () => {
     setShowSupport(false);
     void Linking.openURL(`https://wa.me/${SUPPORT_WHATSAPP_PHONE}`);
+  };
+
+  const openPrivacyPolicy = () => {
+    void Linking.openURL(PRIVACY_POLICY_URL);
   };
 
   const clearAllData = async () => {
@@ -85,24 +105,41 @@ export function ProfileScreen() {
           </View>
 
           <View style={styles.content}>
-            <AppText style={styles.sectionTitle}>{t("profile.profileInfo")}</AppText>
+            <AppText style={styles.sectionTitle}>
+              {t("profile.profileInfo")}
+            </AppText>
 
             <View style={styles.card}>
-              <AppText color="black">{t("profile.name")}: {profile?.name}</AppText>
-              <AppText color="black">{t("profile.height")}: {profile?.heightCm} cm</AppText>
-              <AppText color="black">{t("profile.weight")}: {profile?.weightKg} kg</AppText>
-              <AppText color="black">{t("profile.gender")}: {profile?.gender}</AppText>
+              <AppText color="black">
+                {t("profile.name")}: {profile?.name}
+              </AppText>
+              <AppText color="black">
+                {t("profile.height")}: {profile?.heightCm} cm
+              </AppText>
+              <AppText color="black">
+                {t("profile.weight")}: {profile?.weightKg} kg
+              </AppText>
+              <AppText color="black">
+                {t("profile.gender")}: {profile?.gender}
+              </AppText>
             </View>
 
             <AppText style={[styles.sectionTitle, { marginTop: 24 }]}>
               {t("profile.settings")}
             </AppText>
 
-            <Item title={`🌐 ${t("profile.changeLanguage")}`} onPress={openLanguageModal} />
+            <Item
+              title={`🌐 ${t("profile.changeLanguage")}`}
+              onPress={openLanguageModal}
+            />
             <Item
               title={`💬 ${t("profile.contactSupport")}`}
               subtitle={t("profile.supportSubtitle")}
               onPress={() => setShowSupport(true)}
+            />
+            <Item
+              title={`🔒 ${t("profile.privacyPolicy")}`}
+              onPress={openPrivacyPolicy}
             />
 
             <Item
@@ -131,7 +168,7 @@ export function ProfileScreen() {
                 onPress={openEmail}
               >
                 <AppText style={[styles.btnText, styles.btnTextWhite]}>
-                  ✉️  Email
+                  ✉️ Email
                 </AppText>
               </TouchableOpacity>
 
@@ -140,7 +177,7 @@ export function ProfileScreen() {
                 onPress={openWhatsApp}
               >
                 <AppText style={[styles.btnText, styles.btnTextWhite]}>
-                  💬  WhatsApp
+                  💬 WhatsApp
                 </AppText>
               </TouchableOpacity>
             </View>

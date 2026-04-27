@@ -13,23 +13,12 @@ import {
 } from "@/data/mealPlans";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import {
-  preloadInterstitial,
-  preloadRewarded,
-  showRewarded,
-  tryShowInterstitial,
-} from "@/lib/ads";
-import { AD_FREQUENCY } from "@/lib/ads/config";
+import { preloadRewarded, showRewarded } from "@/lib/ads";
 import { MealResultCard } from "./MealResultCard";
 
 export default function GenerateMealScreen() {
@@ -43,7 +32,6 @@ export default function GenerateMealScreen() {
   const [vegetarian, setVegetarian] = useState(false);
   const [result, setResult] = useState<MealPlan | null>(null);
   const [error, setError] = useState<string>("");
-  const generationCountRef = useRef(0);
 
   const lang: Lang = useMemo(() => {
     const code = i18n.language;
@@ -61,7 +49,11 @@ export default function GenerateMealScreen() {
   const diseaseOptions: SelectOption[] = [
     { value: "none", label: t("mealPlan.diseaseNone"), emoji: "✅" },
     { value: "diabetes", label: t("mealPlan.diseaseDiabetes"), emoji: "🩸" },
-    { value: "hypertension", label: t("mealPlan.diseaseHypertension"), emoji: "❤️" },
+    {
+      value: "hypertension",
+      label: t("mealPlan.diseaseHypertension"),
+      emoji: "❤️",
+    },
     { value: "gastritis", label: t("mealPlan.diseaseGastritis"), emoji: "🫃" },
     { value: "heart", label: t("mealPlan.diseaseHeart"), emoji: "💓" },
     { value: "obesity", label: t("mealPlan.diseaseObesity"), emoji: "⚠️" },
@@ -80,7 +72,7 @@ export default function GenerateMealScreen() {
     { value: "senior", label: t("mealPlan.ageSenior"), emoji: "🧓" },
   ];
 
-  const handleGenerate = useCallback(() => {
+  const generatePlan = useCallback(() => {
     setError("");
     if (!goal || !disease || !mealTime || !ageGroup) {
       setError(t("mealPlan.missingFields"));
@@ -100,24 +92,19 @@ export default function GenerateMealScreen() {
       return;
     }
     setResult(picked);
-
-    generationCountRef.current += 1;
-    if (generationCountRef.current % AD_FREQUENCY.interstitialShowEveryN === 0) {
-      setTimeout(() => {
-        void tryShowInterstitial();
-      }, 1500);
-    } else {
-      preloadInterstitial();
-    }
   }, [goal, disease, mealTime, ageGroup, vegetarian, t]);
 
-  const handleBonusGenerate = useCallback(() => {
+  const handleGenerateWithAd = useCallback(() => {
+    setError("");
     void showRewarded(() => {
-      handleGenerate();
-    }).then(() => {
+      generatePlan();
+    }).then((shown) => {
+      if (!shown) {
+        setError(t("mealPlan.adRequired"));
+      }
       preloadRewarded();
     });
-  }, [handleGenerate]);
+  }, [generatePlan, t]);
 
   return (
     <View style={styles.root}>
@@ -208,7 +195,7 @@ export default function GenerateMealScreen() {
 
           <TouchableOpacity
             activeOpacity={0.9}
-            onPress={handleGenerate}
+            onPress={handleGenerateWithAd}
             style={styles.ctaWrap}
           >
             <LinearGradient
@@ -218,7 +205,7 @@ export default function GenerateMealScreen() {
               style={styles.cta}
             >
               <AppText size={16} weight="bold" color="#FFFFFF">
-                ✨  {t("mealPlan.generate")}
+                🎬 {t("mealPlan.generateWatchAd")}
               </AppText>
             </LinearGradient>
           </TouchableOpacity>
@@ -228,17 +215,8 @@ export default function GenerateMealScreen() {
               <MealResultCard
                 meal={result}
                 lang={lang}
-                onRegenerate={handleGenerate}
+                onRegenerate={handleGenerateWithAd}
               />
-              <TouchableOpacity
-                activeOpacity={0.85}
-                onPress={handleBonusGenerate}
-                style={styles.bonusBtn}
-              >
-                <AppText size={14} weight="semibold" color="#FCD34D">
-                  {t("mealPlan.bonusGenerate")}
-                </AppText>
-              </TouchableOpacity>
             </>
           ) : null}
 
@@ -315,14 +293,5 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     alignItems: "center",
     justifyContent: "center",
-  },
-  bonusBtn: {
-    marginTop: 14,
-    paddingVertical: 12,
-    borderRadius: 14,
-    alignItems: "center",
-    backgroundColor: "rgba(250,204,21,0.12)",
-    borderWidth: 1,
-    borderColor: "rgba(250,204,21,0.45)",
   },
 });

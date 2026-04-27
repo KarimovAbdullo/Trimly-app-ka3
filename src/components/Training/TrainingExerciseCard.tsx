@@ -10,6 +10,7 @@ type Props = {
   onPlay: () => void;
   todayReps: number;
   completedDays: number;
+  isLocked?: boolean;
 };
 
 function nth(n: number): string {
@@ -32,6 +33,7 @@ export function TrainingExerciseCard({
   onPlay,
   todayReps,
   completedDays,
+  isLocked = false,
 }: Props) {
   const { t } = useTranslation();
   const target = Math.max(0, Math.floor(exercise.targetReps));
@@ -77,8 +79,8 @@ export function TrainingExerciseCard({
                 {t("training.target")}: {target} {t("training.reps")}
               </Text>
               <Text style={styles.infoLine}>
-                {t("training.today")}: {todayReps} {t("training.reps")} - {t("training.lastRep")}:{" "}
-                {todayReps > 0 ? nth(todayReps) : "—"}
+                {t("training.today")}: {todayReps} {t("training.reps")} -{" "}
+                {t("training.lastRep")}: {todayReps > 0 ? nth(todayReps) : "—"}
               </Text>
               <Text style={styles.infoLine}>
                 {t("training.completedDays")}: {completedDays}
@@ -101,12 +103,20 @@ export function TrainingExerciseCard({
               </View>
 
               <Text style={styles.progressText}>
-                {percent}% {t("training.doneLeft")} - {remaining} {t("training.left")}
+                {percent}% {t("training.doneLeft")} - {remaining}{" "}
+                {t("training.left")}
               </Text>
             </View>
           </View>
 
           <View style={styles.rightCol}>
+            {isLocked ? (
+              <View style={styles.unlockBadge}>
+                <Text style={styles.unlockBadgeText}>
+                  {t("training.unlock.badge")}
+                </Text>
+              </View>
+            ) : null}
             <View style={styles.playOuter}>
               <LinearGradient
                 colors={["#c4b5fd", "#8b5cf6"]}
@@ -114,7 +124,7 @@ export function TrainingExerciseCard({
               >
                 <View style={styles.playInner}>
                   <MaterialCommunityIcons
-                    name="play"
+                    name={isLocked ? "lock" : "play"}
                     size={20}
                     color="#1e1b4b"
                   />
@@ -238,6 +248,21 @@ const styles = StyleSheet.create({
     right: 10,
     alignItems: "center",
     justifyContent: "center",
+  },
+  unlockBadge: {
+    marginBottom: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(250,204,21,0.6)",
+    backgroundColor: "rgba(250,204,21,0.2)",
+  },
+  unlockBadgeText: {
+    color: "#FDE68A",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 0.2,
   },
   timerBox: {
     backgroundColor: "rgba(0,0,0,0.35)",

@@ -1,25 +1,28 @@
+import { InfoImageModal } from "@/components/InfoImageModal";
 import {
   TRAINING_EXERCISES,
   type TrainingExerciseDef,
+  type TrainingExerciseId,
 } from "@/constants/trainingExercises";
 import { useAppSelector } from "@/store/hooks";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import moment from "moment";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { TrainingExerciseCard } from "./TrainingExerciseCard";
-import { InfoImageModal } from "@/components/InfoImageModal";
-import { useMemo, useState } from "react";
 
 type Props = {
   onSelect: (exercise: TrainingExerciseDef) => void;
   exercises?: TrainingExerciseDef[];
+  unlockedByAd?: Partial<Record<TrainingExerciseId, boolean>>;
 };
 
 export function TrainingExercisePicker({
   onSelect,
   exercises = TRAINING_EXERCISES,
+  unlockedByAd = {},
 }: Props) {
   const { t } = useTranslation();
   const [infoVisible, setInfoVisible] = useState(false);
@@ -81,6 +84,7 @@ export function TrainingExercisePicker({
               exercise={ex}
               todayReps={todayReps}
               completedDays={completedDays}
+              isLocked={ex.id !== "squat" && !unlockedByAd[ex.id]}
               onPlay={() => onSelect(ex)}
             />
           );
