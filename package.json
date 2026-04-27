@@ -14,7 +14,8 @@
     "android:release:apk": "cd android && gradlew.bat assembleRelease",
     "android:release:aab": "cd android && gradlew.bat bundleRelease",
     "android:release:clean": "cd android && gradlew.bat clean",
-    "android:release:all": "npm run android:release:apk && npm run android:release:aab"
+    "android:release:all": "npm run android:release:apk && npm run android:release:aab",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.1.1",
@@ -67,6 +68,7 @@
     "@types/react": "~19.1.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0",
+    "patch-package": "^8.0.0",
     "reactotron-react-native": "^5.1.18",
     "typescript": "~5.9.2"
   },
